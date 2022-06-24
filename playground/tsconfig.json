@@ -1,0 +1,14 @@
+{
+  "compilerOptions": {
+    "baseUrl": ".",
+    "jsx": "preserve",
+    "lib": ["ES6", "DOM"],
+    "esModuleInterop": true,
+    "types": [
+      "vite-plugin-info/client"
+    ]
+  },
+  "exclude": [
+    "**/dist/**"
+  ]
+}

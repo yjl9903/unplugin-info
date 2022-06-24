@@ -2,7 +2,11 @@
   "name": "vite-plugin-info",
   "version": "0.0.0",
   "description": "Export build information as Vite virutal module",
-  "keywords": ["vite", "vite-plugin", "git"],
+  "keywords": [
+    "vite",
+    "vite-plugin",
+    "git"
+  ],
   "homepage": "https://github.com/yjl9903/vite-plugin-info#readme",
   "bugs": {
     "url": "https://github.com/yjl9903/vite-plugin-info/issues"
@@ -19,21 +23,30 @@
       "require": "./dist/index.cjs",
       "import": "./dist/index.mjs",
       "types": "./dist/index.d.ts"
+    },
+    "./client": {
+      "types": "./client.d.ts"
     }
   },
   "main": "./dist/index.cjs",
   "module": "./dist/index.mjs",
   "types": "./dist/index.d.ts",
   "files": [
-    "dist"
+    "dist",
+    "*.d.ts"
   ],
   "scripts": {
     "build": "unbuild",
+    "build:play": "pnpm -C playground build",
+    "dev:play": "pnpm -C playground dev",
     "format": "prettier --write src/**/*.ts",
     "release": "bumpp --commit --push --tag && pnpm publish",
-    "preversion": "pnpm typecheck && pnpm build",
     "test": "vitest",
-    "typecheck": "tsc --noEmit"
+    "typecheck": "tsc --noEmit",
+    "preversion": "pnpm typecheck && pnpm build"
+  },
+  "dependencies": {
+    "git-repo-info": "^2.1.1"
   },
   "devDependencies": {
     "@types/node": "^18.0.0",
@@ -43,6 +56,9 @@
     "unbuild": "^0.7.4",
     "vite": "^2.9.12",
     "vitest": "^0.15.2"
+  },
+  "peerDependencies": {
+    "vite": "^2.9.12"
   },
   "packageManager": "pnpm@7.3.0"
 }

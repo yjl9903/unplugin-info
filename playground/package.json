@@ -1,0 +1,14 @@
+{
+  "private": "true",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build"
+  },
+  "devDependencies": {
+    "vite": "2.9.12",
+    "vite-plugin-info": "workspace:*"
+  },
+  "dependencies": {
+    "date-fns": "^2.28.0"
+  }
+}
