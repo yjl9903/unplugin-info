@@ -1,6 +1,6 @@
 {
   "name": "vite-plugin-info",
-  "version": "0.0.0",
+  "version": "0.0.1",
   "description": "Export build information as Vite virutal module",
   "keywords": [
     "vite",
