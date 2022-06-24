@@ -1,5 +1,7 @@
 # vite-plugin-info
 
+[![version](https://img.shields.io/npm/v/vite-plugin-info?color=rgb%2850%2C203%2C86%29&label=vite-plugin-info)](https://www.npmjs.com/package/vite-plugin-info) [![CI](https://github.com/yjl9903/vite-plugin-info/actions/workflows/ci.yml/badge.svg)](https://github.com/yjl9903/vite-plugin-info/actions/workflows/ci.yml)
+
 Export build information as Vite virutal module.
 
 This plugin helps you add build timestamp / commit SHA / ... to your application. So you can easily check whether the production version meets your expectations.
