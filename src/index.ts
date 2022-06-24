@@ -7,6 +7,11 @@ interface UserOption {
    * Github repo url
    */
   github?: string;
+
+  /**
+   * Custom virtual module prefix
+   */
+  prefix?: string;
 }
 
 export default function createInfoPlugin(option?: UserOption): Plugin {
@@ -14,8 +19,8 @@ export default function createInfoPlugin(option?: UserOption): Plugin {
   const info = getRepoInfo();
 
   const ModuleName = {
-    BuildTime: '~build/time',
-    BuildInfo: '~build/info'
+    BuildTime: `~${option?.prefix ?? 'build'}/time`,
+    BuildInfo: `~${option?.prefix ?? 'build'}/info`
   };
 
   return {
