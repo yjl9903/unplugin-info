@@ -5,7 +5,7 @@
     "build": "vite build"
   },
   "devDependencies": {
-    "vite": "2.9.12",
+    "vite": "2.9.13",
     "vite-plugin-info": "workspace:*"
   },
   "dependencies": {
