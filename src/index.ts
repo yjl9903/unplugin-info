@@ -1,9 +1,18 @@
 import type { Plugin } from 'vite';
 
+import path from 'node:path';
+
 import ci from 'ci-info';
 import getRepoInfo from 'git-repo-info';
 
-interface UserOption {
+import { getRepoUrl } from './repo';
+
+export interface UserOption {
+  /**
+   * Git repo root path
+   */
+  root?: string;
+
   /**
    * Github repo url
    */
@@ -11,17 +20,22 @@ interface UserOption {
 
   /**
    * Custom virtual module prefix
+   *
+   * @default '~build'
    */
   prefix?: string;
 }
 
 export default function createInfoPlugin(option?: UserOption): Plugin {
   const now = new Date();
-  const info = getRepoInfo();
+
+  const root = path.resolve(option?.root ?? process.cwd());
+  const info = getRepoInfo(root);
+  const github = option?.github ?? getRepoUrl(info, root);
 
   const ModuleName = {
-    BuildTime: `~${option?.prefix ?? 'build'}/time`,
-    BuildInfo: `~${option?.prefix ?? 'build'}/info`
+    BuildTime: `${option?.prefix ?? '~build'}/time`,
+    BuildInfo: `${option?.prefix ?? '~build'}/info`
   };
 
   return {
@@ -40,9 +54,10 @@ export default function createInfoPlugin(option?: UserOption): Plugin {
         const gen = (key: keyof typeof info) => {
           return `export const ${key} = ${JSON.stringify(info[key])}`;
         };
+
         return [
           `export const CI = ${ci.isCI ? `"${ci.name}"` : 'null'}`,
-          `export const github = ${JSON.stringify(option?.github ?? null)}`,
+          `export const github = ${JSON.stringify(github ?? null)}`,
           gen('sha'),
           gen('abbreviatedSha'),
           gen('tag'),

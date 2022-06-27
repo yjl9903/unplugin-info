@@ -38,6 +38,7 @@
   "scripts": {
     "build": "unbuild",
     "build:play": "pnpm -C playground build",
+    "dev": "unbuild --stub",
     "dev:play": "pnpm -C playground dev",
     "format": "prettier --write src/**/*.ts",
     "release": "bumpp --commit --push --tag && pnpm publish",
@@ -47,10 +48,14 @@
   },
   "dependencies": {
     "ci-info": "^3.3.2",
-    "git-repo-info": "^2.1.1"
+    "git-repo-info": "^2.1.1",
+    "parse-github-url": "^1.0.2",
+    "remote-origin-url": "^2.0.0"
   },
   "devDependencies": {
     "@types/node": "^18.0.0",
+    "@types/parse-github-url": "^1.0.0",
+    "@types/remote-origin-url": "^2.0.1",
     "bumpp": "^8.2.1",
     "prettier": "^2.7.1",
     "typescript": "^4.7.4",
