@@ -24,6 +24,13 @@ export interface UserOption {
    * @default '~build'
    */
   prefix?: string;
+
+  /**
+   * Pass some meta data to Vite app
+   *
+   * Notice: meta data will be serialized to JSON format
+   */
+  meta?: Record<string | number | symbol, any>;
 }
 
 export default function createInfoPlugin(option?: UserOption): Plugin {
@@ -35,13 +42,15 @@ export default function createInfoPlugin(option?: UserOption): Plugin {
 
   const ModuleName = {
     BuildTime: `${option?.prefix ?? '~build'}/time`,
-    BuildInfo: `${option?.prefix ?? '~build'}/info`
+    BuildInfo: `${option?.prefix ?? '~build'}/info`,
+    BuildMeta: `${option?.prefix ?? '~build'}/meta`
   };
 
   return {
     name: 'vite-plugin-info',
     resolveId(id) {
-      if (ModuleName.BuildTime === id || ModuleName.BuildInfo === id) return id;
+      if (ModuleName.BuildTime === id || ModuleName.BuildInfo === id || ModuleName.BuildMeta === id)
+        return id;
     },
     async load(id) {
       if (id === ModuleName.BuildTime) {
@@ -69,6 +78,11 @@ export default function createInfoPlugin(option?: UserOption): Plugin {
           gen('lastTag'),
           gen('commitsSinceLastTag')
         ].join('\n');
+      } else if (id === ModuleName.BuildMeta) {
+        const body = Object.entries(option?.meta ?? {}).map(
+          ([key, value]) => `export const ${key} = ${JSON.stringify(value, null, 2)};`
+        );
+        return body.join('\n');
       }
     }
   };

@@ -28,9 +28,11 @@ export default defineConfig({
 
 ## Usage
 
-`vite-plugin-info` creates two virtual modules, `~build/time` and `~build/info`.
+`vite-plugin-info` creates three virtual modules, `~build/time`, `~build/info`, and `~build/meta`.
 
-`~build/time` exports the timestamp when the vite started.
+### ~build/time
+
+It exports the timestamp when the vite started.
 
 ```ts
 import now from '~build/time'
@@ -39,7 +41,9 @@ console.log(now)
 // There will be a log like "Fri Jun 24 2022 16:30:30 GMT+0800 (中国标准时间)"
 ```
 
-`~build/info` exports the infomation about the current git repo. This is powered by [git-repo-info](https://github.com/rwjblue/git-repo-info).
+### ~build/info
+
+It exports the infomation about the current git repo. This is powered by [git-repo-info](https://github.com/rwjblue/git-repo-info).
 
 ```ts
 import {
@@ -58,6 +62,34 @@ import {
 
 // ...
 ```
+
+### ~build/meta
+
+It exports some meta data from the options of the plugin.
+
+```ts
+// vite.config.ts
+export default defineConfig({
+  plugins: [
+    BuildInfo({
+      meta: { message: 'This is set from vite.config.ts' }
+    })
+  ]
+})
+```
+
+Then you can import them in your Vite app.
+
+```ts
+import { message } from '~build/meta'
+
+console.log(message)
+// This is set from vite.config.ts
+```
+
+> **Notice**
+>
+> Meta data will be serialized to JSON format, so you should gen it in you `vite.config.ts` and pass the result object.
 
 ## License
 

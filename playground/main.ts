@@ -13,6 +13,8 @@ import {
   authorDate,
   commitMessage
 } from '~build/info';
+import { message } from '~build/meta';
+
 import { format } from 'date-fns';
 
 console.log('Build time:', now);
@@ -38,3 +40,5 @@ append('committerDate: ' + committerDate);
 append('author: ' + author);
 append('authorDate: ' + authorDate);
 append('commitMessage: ' + commitMessage);
+
+append('Message: ' + message);
