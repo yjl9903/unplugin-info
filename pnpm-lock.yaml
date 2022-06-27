@@ -6,6 +6,7 @@ importers:
     specifiers:
       '@types/node': ^18.0.0
       bumpp: ^8.2.1
+      ci-info: ^3.3.2
       git-repo-info: ^2.1.1
       prettier: ^2.7.1
       typescript: ^4.7.4
@@ -13,6 +14,7 @@ importers:
       vite: ^2.9.13
       vitest: ^0.16.0
     dependencies:
+      ci-info: 3.3.2
       git-repo-info: 2.1.1
     devDependencies:
       '@types/node': 18.0.0
@@ -507,6 +509,10 @@ packages:
   /check-error/1.0.2:
     resolution: {integrity: sha512-BrgHpW9NURQgzoNyjfq0Wu6VFO6D7IZEmJNdtgNqpzGG8RuNFHt2jQxWlAs4HMe119chBnv+34syEZtc6IhLtA==}
     dev: true
+
+  /ci-info/3.3.2:
+    resolution: {integrity: sha512-xmDt/QIAdeZ9+nfdPsaBCpMvHNLFiLdjj59qjqn+6iPe6YmHGQ35sBnQ8uslRBXFmXkiZQOJRjvQeoGppoTjjg==}
+    dev: false
 
   /color-convert/1.9.3:
     resolution: {integrity: sha512-QfAUtd+vFdAtFQcC8CCyYt1fYWxSqAiK2cSD6zDB8N3cpsEBAvRxp9zOGg6G/SHHJYAT88/az/IuDGALsNVbGg==}

@@ -1,5 +1,6 @@
 import type { Plugin } from 'vite';
 
+import ci from 'ci-info';
 import getRepoInfo from 'git-repo-info';
 
 interface UserOption {
@@ -40,6 +41,7 @@ export default function createInfoPlugin(option?: UserOption): Plugin {
           return `export const ${key} = ${JSON.stringify(info[key])}`;
         };
         return [
+          `export const CI = ${ci.isCI ? `"${ci.name}"` : 'null'}`,
           `export const github = ${JSON.stringify(option?.github ?? null)}`,
           gen('sha'),
           gen('abbreviatedSha'),
