@@ -87,9 +87,17 @@ console.log(message)
 // This is set from vite.config.ts
 ```
 
-> **Notice**
+> **Note**
 >
 > Meta data will be serialized to JSON format, so you should gen it in you `vite.config.ts` and pass the result object.
+
+To get TypeScript support, you can add type declaration in your `env.d.ts` (It is include in the [official Vite project template](https://vitejs.dev/guide/#scaffolding-your-first-vite-project)).
+
+```ts
+declare module '~build/meta' {
+  export const message: string;
+}
+```
 
 ## License
 
