@@ -16,7 +16,7 @@ importers:
       typescript: ^4.7.4
       unbuild: ^0.7.4
       vite: ^2.9.13
-      vitest: ^0.16.0
+      vitest: ^0.17.0
     dependencies:
       ci-info: 3.3.2
       git-repo-info: 2.1.1
@@ -31,7 +31,7 @@ importers:
       typescript: 4.7.4
       unbuild: 0.7.4
       vite: 2.9.13
-      vitest: 0.16.0
+      vitest: 0.17.0
 
   playground:
     specifiers:
@@ -1691,16 +1691,19 @@ packages:
       fsevents: 2.3.2
     dev: true
 
-  /vitest/0.16.0:
-    resolution: {integrity: sha512-Ntp6jrM8wf2NMtamMBLkRBBdeqHkgAH/WMh5Xryts1j2ft2D8QZQbiSVFkSl4WmEQzcPP0YM069g/Ga1vtnEtg==}
+  /vitest/0.17.0:
+    resolution: {integrity: sha512-5YO9ubHo0Zg35mea3+zZAr4sCku32C3usvIH5COeJB48TZV/R0J9aGNtGOOqEWZYfOKP0pGZUvTokne3x/QEFg==}
     engines: {node: '>=v14.16.0'}
     hasBin: true
     peerDependencies:
+      '@edge-runtime/vm': '*'
       '@vitest/ui': '*'
       c8: '*'
       happy-dom: '*'
       jsdom: '*'
     peerDependenciesMeta:
+      '@edge-runtime/vm':
+        optional: true
       '@vitest/ui':
         optional: true
       c8:
