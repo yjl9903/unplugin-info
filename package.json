@@ -5,7 +5,8 @@
   "keywords": [
     "vite",
     "vite-plugin",
-    "git"
+    "git",
+    "CI"
   ],
   "homepage": "https://github.com/yjl9903/vite-plugin-info#readme",
   "bugs": {
@@ -18,6 +19,7 @@
   "license": "MIT",
   "author": "XLor",
   "sideEffects": false,
+  "type": "module",
   "exports": {
     ".": {
       "require": "./dist/index.cjs",
@@ -60,11 +62,11 @@
     "prettier": "^2.7.1",
     "typescript": "^4.7.4",
     "unbuild": "^0.7.4",
-    "vite": "^2.9.14",
+    "vite": "^3.0.0",
     "vitest": "^0.18.0"
   },
   "peerDependencies": {
-    "vite": "^2.9.13"
+    "vite": "^2.9.13 || ^3.0.0"
   },
-  "packageManager": "pnpm@7.5.0"
+  "packageManager": "pnpm@7.5.1"
 }
