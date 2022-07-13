@@ -47,3 +47,5 @@ declare module '~build/info' {
   /** The commit message for the current SHA */
   export const commitMessage: string;
 }
+
+declare module '~build/meta' {}
