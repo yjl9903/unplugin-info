@@ -7,7 +7,7 @@
     "dev": "vite"
   },
   "dependencies": {
-    "date-fns": "^2.28.0"
+    "date-fns": "^2.29.1"
   },
   "devDependencies": {
     "vite": "^3.0.2",
