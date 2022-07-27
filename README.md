@@ -99,6 +99,14 @@ declare module '~build/meta' {
 }
 ```
 
+### ~build/package
+
+It exports the information of the current `package.json`.
+
+```ts
+import { name, version } from '~build/package';
+```
+
 ## License
 
 MIT License © 2021 [XLor](https://github.com/yjl9903)
