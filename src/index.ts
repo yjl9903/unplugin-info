@@ -1,5 +1,6 @@
 import type { Plugin } from 'vite';
 
+import fs from 'node:fs';
 import path from 'node:path';
 
 import ci from 'ci-info';
@@ -43,13 +44,19 @@ export default function createInfoPlugin(option?: UserOption): Plugin {
   const ModuleName = {
     BuildTime: `${option?.prefix ?? '~build'}/time`,
     BuildInfo: `${option?.prefix ?? '~build'}/info`,
-    BuildMeta: `${option?.prefix ?? '~build'}/meta`
+    BuildMeta: `${option?.prefix ?? '~build'}/meta`,
+    BuildPackage: `${option?.prefix ?? '~build'}/package`
   };
 
   return {
     name: 'vite-plugin-info',
     resolveId(id) {
-      if (ModuleName.BuildTime === id || ModuleName.BuildInfo === id || ModuleName.BuildMeta === id)
+      if (
+        ModuleName.BuildTime === id ||
+        ModuleName.BuildInfo === id ||
+        ModuleName.BuildMeta === id ||
+        ModuleName.BuildPackage === id
+      )
         return id;
     },
     async load(id) {
@@ -83,6 +90,22 @@ export default function createInfoPlugin(option?: UserOption): Plugin {
           ([key, value]) => `export const ${key} = ${JSON.stringify(value, null, 2)};`
         );
         return body.join('\n');
+      } else if (id === ModuleName.BuildPackage) {
+        const pkg = JSON.parse(fs.readFileSync(path.join(root, 'package.json'), 'utf-8'));
+        const entries = Object.entries({
+          name: '',
+          version: '0.0.0',
+          description: '',
+          keywords: [],
+          license: '',
+          author: '',
+          ...pkg
+        }).filter(([key]) =>
+          ['name', 'version', 'description', 'keywords', 'license', 'author'].includes(key)
+        );
+        return entries
+          .map(([key, value]) => `export const ${key} = ${JSON.stringify(value, null, 2)};`)
+          .join('\n');
       }
     }
   };

@@ -49,3 +49,23 @@ declare module '~build/info' {
 }
 
 declare module '~build/meta' {}
+
+declare module '~build/package' {
+  /** Package name */
+  export const name: string;
+
+  /** Package version */
+  export const version: string;
+
+  /** Package description */
+  export const description: string;
+
+  /** Package keywords */
+  export const keywords: string[];
+
+  /** Package license */
+  export const license: string;
+
+  /** Package author */
+  export const author: string;
+}

@@ -14,6 +14,7 @@ import {
   commitMessage
 } from '~build/info';
 import { message } from '~build/meta';
+import { name, version } from '~build/package';
 
 import { format } from 'date-fns';
 
@@ -42,3 +43,6 @@ append('authorDate: ' + authorDate);
 append('commitMessage: ' + commitMessage);
 
 append('Message: ' + message);
+
+append('Package name: ' + name);
+append('Package version: ' + version);

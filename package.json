@@ -42,8 +42,8 @@
     "build:play": "pnpm -C playground build",
     "dev": "unbuild --stub",
     "dev:play": "pnpm -C playground dev",
-    "format": "prettier --write src/**/*.ts",
-    "release": "bumpp --commit --push --tag && pnpm publish",
+    "format": "prettier --write playground/**/*.ts src/**/*.ts",
+    "release": "bumpp package.json ./playground/package.json --commit --push --tag && pnpm publish",
     "test": "vitest",
     "typecheck": "tsc --noEmit",
     "preversion": "pnpm typecheck && pnpm build"
