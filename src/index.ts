@@ -57,9 +57,11 @@ export default function createInfoPlugin(option?: UserOption): Plugin {
         ModuleName.BuildMeta === id ||
         ModuleName.BuildPackage === id
       )
-        return id;
+        return '\0' + id;
     },
     async load(id) {
+      if (!id.startsWith('\0')) return;
+      id = id.slice(1);
       if (id === ModuleName.BuildTime) {
         return `const time = new Date(${now.getTime()})\n` + `export default time`;
       } else if (id === ModuleName.BuildInfo) {
