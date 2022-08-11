@@ -15,7 +15,7 @@ importers:
       prettier: ^2.7.1
       remote-origin-url: ^2.0.0
       typescript: ^4.7.4
-      unbuild: ^0.8.7
+      unbuild: ^0.8.8
       vite: ^3.0.5
       vitest: ^0.21.1
     dependencies:
@@ -31,7 +31,7 @@ importers:
       date-fns: 2.29.1
       prettier: 2.7.1
       typescript: 4.7.4
-      unbuild: 0.8.7
+      unbuild: 0.8.8
       vite: 3.0.5
       vitest: 0.21.1
 
@@ -1719,8 +1719,8 @@ packages:
     resolution: {integrity: sha512-e4+UtA5IRO+ha6hYklwj6r7BjiGMxS0O+UaSg9HbaTefg4kMkzj4tXzEBajRR+wkxf+golgAWKzLbytCUDMJAA==}
     dev: true
 
-  /unbuild/0.8.7:
-    resolution: {integrity: sha512-zfmMCqaDW3IekoiqDxrMjNkaiU1kC89jX3nZki2l5jr5xWaptF0FGxswKINcuM4YRd3oNTNRkAHPuIBabJPCcw==}
+  /unbuild/0.8.8:
+    resolution: {integrity: sha512-BGDDh3BmM+B0Mc1sVSeUDXKykH3h73V7LcGLM2D3v4Tv5Pr3vgxEwxCkxNw1mZlW71sQX/yxMAoBIxnpmr55Tg==}
     hasBin: true
     dependencies:
       '@rollup/plugin-alias': 3.1.9_rollup@2.77.2
