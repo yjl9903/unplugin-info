@@ -59,7 +59,7 @@
     "@types/parse-github-url": "^1.0.0",
     "@types/remote-origin-url": "^2.0.1",
     "bumpp": "^8.2.1",
-    "date-fns": "^2.29.2",
+    "date-fns": "^2.29.3",
     "prettier": "^2.7.1",
     "typescript": "^4.8.4",
     "unbuild": "^0.8.11",
