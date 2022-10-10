@@ -16,7 +16,7 @@ importers:
       remote-origin-url: ^2.0.0
       typescript: ^4.8.4
       unbuild: ^0.8.11
-      vite: ^3.1.6
+      vite: ^3.1.7
       vitest: ^0.24.0
     dependencies:
       ci-info: 3.5.0
@@ -32,18 +32,18 @@ importers:
       prettier: 2.7.1
       typescript: 4.8.4
       unbuild: 0.8.11
-      vite: 3.1.6
+      vite: 3.1.7
       vitest: 0.24.0
 
   playground:
     specifiers:
       date-fns: ^2.29.3
-      vite: ^3.1.6
+      vite: ^3.1.7
       vite-plugin-info: workspace:*
     dependencies:
       date-fns: 2.29.3
     devDependencies:
-      vite: 3.1.6
+      vite: 3.1.7
       vite-plugin-info: link:..
 
 packages:
@@ -2009,8 +2009,8 @@ packages:
       - supports-color
     dev: true
 
-  /vite/3.1.6:
-    resolution: {integrity: sha512-qMXIwnehvvcK5XfJiXQUiTxoYAEMKhM+jqCY6ZSTKFBKu1hJnAKEzP3AOcnTerI0cMZYAaJ4wpW1wiXLMDt4mA==}
+  /vite/3.1.7:
+    resolution: {integrity: sha512-5vCAmU4S8lyVdFCInu9M54f/g8qbOMakVw5xJ4pjoaDy5wgy9sLLZkGdSLN52dlsBqh0tBqxjaqqa8LgPqwRAA==}
     engines: {node: ^14.18.0 || >=16.0.0}
     hasBin: true
     peerDependencies:
@@ -2068,7 +2068,7 @@ packages:
       tinybench: 2.3.0
       tinypool: 0.3.0
       tinyspy: 1.0.2
-      vite: 3.1.6
+      vite: 3.1.7
     transitivePeerDependencies:
       - less
       - sass
