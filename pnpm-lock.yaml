@@ -14,7 +14,7 @@ importers:
       parse-github-url: ^1.0.2
       prettier: ^2.7.1
       remote-origin-url: ^2.0.0
-      typescript: ^4.8.4
+      typescript: ^4.9.3
       unbuild: ^0.9.4
       vite: ^3.2.4
       vitest: ^0.25.2
@@ -30,7 +30,7 @@ importers:
       bumpp: 8.2.1
       date-fns: 2.29.3
       prettier: 2.7.1
-      typescript: 4.8.4
+      typescript: 4.9.3
       unbuild: 0.9.4
       vite: 3.2.4_@types+node@18.11.9
       vitest: 0.25.2
@@ -1414,7 +1414,7 @@ packages:
     hasBin: true
     dev: true
 
-  /mkdist/0.3.13_typescript@4.8.4:
+  /mkdist/0.3.13_typescript@4.9.3:
     resolution: {integrity: sha512-+eCPpkr8l2X630y5PIlkts2tzYEsb+aGIgXdrQv9ZGtWE2bLlD6kVIFfI6FJwFpjjw4dPPyorxQc6Uhm/oXlvg==}
     hasBin: true
     peerDependencies:
@@ -1430,7 +1430,7 @@ packages:
       jiti: 1.16.0
       mri: 1.2.0
       pathe: 0.2.0
-      typescript: 4.8.4
+      typescript: 4.9.3
     dev: true
 
   /mlly/0.5.16:
@@ -1589,7 +1589,7 @@ packages:
       glob: 7.2.0
     dev: true
 
-  /rollup-plugin-dts/5.0.0_em67h3dl2s4tcthxg4ia4iozly:
+  /rollup-plugin-dts/5.0.0_4bbjzdyz45y7lm2x2egohjgdt4:
     resolution: {integrity: sha512-OO8ayCvuJCKaQSShyVTARxGurVVk4ulzbuvz+0zFd1f93vlnWFU5pBMT7HFeS6uj7MvvZLx4kUAarGATSU1+Ng==}
     engines: {node: '>=v14'}
     peerDependencies:
@@ -1598,7 +1598,7 @@ packages:
     dependencies:
       magic-string: 0.26.7
       rollup: 3.2.0
-      typescript: 4.8.4
+      typescript: 4.9.3
     optionalDependencies:
       '@babel/code-frame': 7.18.6
     dev: true
@@ -1740,8 +1740,8 @@ packages:
     engines: {node: '>=4'}
     dev: true
 
-  /typescript/4.8.4:
-    resolution: {integrity: sha512-QCh+85mCy+h0IGff8r5XWzOVSbBO+KfeYrMQh7NJ58QujwcE22u+NUSmUxqF+un70P9GXKxa2HCNiTTMJknyjQ==}
+  /typescript/4.9.3:
+    resolution: {integrity: sha512-CIfGzTelbKNEnLpLdGFgdyKhG23CKdKgQPOBc+OUNrkJ2vr+KSzsSV5kq5iWhEQbok+quxgGzrAtGWCyU7tHnA==}
     engines: {node: '>=4.2.0'}
     hasBin: true
     dev: true
@@ -1769,7 +1769,7 @@ packages:
       jiti: 1.16.0
       magic-string: 0.26.7
       mkdirp: 1.0.4
-      mkdist: 0.3.13_typescript@4.8.4
+      mkdist: 0.3.13_typescript@4.9.3
       mlly: 0.5.16
       mri: 1.2.0
       pathe: 0.3.9
@@ -1777,9 +1777,9 @@ packages:
       pretty-bytes: 6.0.0
       rimraf: 3.0.2
       rollup: 3.2.0
-      rollup-plugin-dts: 5.0.0_em67h3dl2s4tcthxg4ia4iozly
+      rollup-plugin-dts: 5.0.0_4bbjzdyz45y7lm2x2egohjgdt4
       scule: 0.3.2
-      typescript: 4.8.4
+      typescript: 4.9.3
       untyped: 0.5.0
     transitivePeerDependencies:
       - supports-color
