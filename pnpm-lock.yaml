@@ -4,7 +4,7 @@ importers:
 
   .:
     specifiers:
-      '@types/node': ^18.11.12
+      '@types/node': ^18.11.13
       '@types/parse-github-url': ^1.0.0
       '@types/remote-origin-url': ^2.0.1
       bumpp: ^8.2.1
@@ -24,7 +24,7 @@ importers:
       parse-github-url: 1.0.2
       remote-origin-url: 2.0.0
     devDependencies:
-      '@types/node': 18.11.12
+      '@types/node': 18.11.13
       '@types/parse-github-url': 1.0.0
       '@types/remote-origin-url': 2.0.1
       bumpp: 8.2.1
@@ -32,7 +32,7 @@ importers:
       prettier: 2.8.1
       typescript: 4.9.4
       unbuild: 1.0.2
-      vite: 3.2.5_@types+node@18.11.12
+      vite: 3.2.5_@types+node@18.11.13
       vitest: 0.25.6
 
   playground:
@@ -455,14 +455,14 @@ packages:
     resolution: {integrity: sha512-WulqXMDUTYAXCjZnk6JtIHPigp55cVtDgDrO2gHRwhyJto21+1zbVCtOYB2L1F9w4qCQ0rOGWBnBe0FNTiEJIQ==}
     dev: true
 
-  /@types/node/18.11.12:
-    resolution: {integrity: sha512-FgD3NtTAKvyMmD44T07zz2fEf+OKwutgBCEVM8GcvMGVGaDktiLNTDvPwC/LUe3PinMW+X6CuLOF2Ui1mAlSXg==}
+  /@types/node/18.11.13:
+    resolution: {integrity: sha512-IASpMGVcWpUsx5xBOrxMj7Bl8lqfuTY7FKAnPmu5cHkfQVWF8GulWS1jbRqA934qZL35xh5xN/+Xe/i26Bod4w==}
     dev: true
 
   /@types/parse-github-url/1.0.0:
     resolution: {integrity: sha512-YNsYjdFmlfwIUGc47jfkb4BvFH9rdVbw80DxqSIQzQ3QpgaekmH2BcGKmEENzQRkeODoT/GiDrsJeztni+diAQ==}
     dependencies:
-      '@types/node': 18.11.12
+      '@types/node': 18.11.13
     dev: true
 
   /@types/remote-origin-url/2.0.1:
@@ -1842,7 +1842,7 @@ packages:
       fsevents: 2.3.2
     dev: true
 
-  /vite/3.2.5_@types+node@18.11.12:
+  /vite/3.2.5_@types+node@18.11.13:
     resolution: {integrity: sha512-4mVEpXpSOgrssFZAOmGIr85wPHKvaDAcXqxVxVRZhljkJOMZi1ibLibzjLHzJvcok8BMguLc7g1W6W/GqZbLdQ==}
     engines: {node: ^14.18.0 || >=16.0.0}
     hasBin: true
@@ -1867,7 +1867,7 @@ packages:
       terser:
         optional: true
     dependencies:
-      '@types/node': 18.11.12
+      '@types/node': 18.11.13
       esbuild: 0.15.14
       postcss: 8.4.18
       resolve: 1.22.1
@@ -1900,7 +1900,7 @@ packages:
     dependencies:
       '@types/chai': 4.3.3
       '@types/chai-subset': 1.3.3
-      '@types/node': 18.11.12
+      '@types/node': 18.11.13
       acorn: 8.8.1
       acorn-walk: 8.2.0
       chai: 4.3.6
@@ -1911,7 +1911,7 @@ packages:
       tinybench: 2.3.1
       tinypool: 0.3.0
       tinyspy: 1.0.2
-      vite: 3.2.5_@types+node@18.11.12
+      vite: 3.2.5_@types+node@18.11.13
     transitivePeerDependencies:
       - less
       - sass
