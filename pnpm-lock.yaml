@@ -17,7 +17,7 @@ importers:
       typescript: ^4.9.4
       unbuild: ^1.0.2
       vite: ^3.2.5
-      vitest: ^0.26.0
+      vitest: ^0.26.1
     dependencies:
       ci-info: 3.6.1
       git-repo-info: 2.1.1
@@ -33,7 +33,7 @@ importers:
       typescript: 4.9.4
       unbuild: 1.0.2
       vite: 3.2.5_@types+node@18.11.17
-      vitest: 0.26.0
+      vitest: 0.26.1
 
   playground:
     specifiers:
@@ -1824,8 +1824,8 @@ packages:
       picocolors: 1.0.0
     dev: true
 
-  /vite-node/0.26.0_@types+node@18.11.17:
-    resolution: {integrity: sha512-nLtHWCv6reONl1oFsKhQ/LT7n3UNLpvVARAJlmGrQV6qSElht/9AdN41Pa+WSkw2Winh682UzM0Yw0GNlfqejw==}
+  /vite-node/0.26.1_@types+node@18.11.17:
+    resolution: {integrity: sha512-5FJSKZZJz48zFRKHE55WyevZe61hLMQEsqGn+ungfd60kxEztFybZ3yG9ToGFtOWNCCy7Vn5EVuXD8bdeHOSdw==}
     engines: {node: '>=v14.16.0'}
     hasBin: true
     dependencies:
@@ -1912,8 +1912,8 @@ packages:
       fsevents: 2.3.2
     dev: true
 
-  /vitest/0.26.0:
-    resolution: {integrity: sha512-5kUnms5WOa0qrDCJePEPB13v9mhr+ZT1Qy0qNg0eVj1X7/Fx4GY4L1e5s3OH+BQ/J7M5WtaKsUGv9l1pbC7v2Q==}
+  /vitest/0.26.1:
+    resolution: {integrity: sha512-qTLRnjYmjmJpHlLUtErxtlRqGCe8WItFhGXKklpWivu7CLP9KXN9iTezROe+vf51Kb+BB/fzxK6fUG9DvFGL5Q==}
     engines: {node: '>=v14.16.0'}
     hasBin: true
     peerDependencies:
@@ -1948,7 +1948,7 @@ packages:
       tinypool: 0.3.0
       tinyspy: 1.0.2
       vite: 3.2.5_@types+node@18.11.17
-      vite-node: 0.26.0_@types+node@18.11.17
+      vite-node: 0.26.1_@types+node@18.11.17
     transitivePeerDependencies:
       - less
       - sass
