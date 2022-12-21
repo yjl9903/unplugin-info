@@ -43,10 +43,11 @@ console.log(now)
 
 ### ~build/info
 
-It exports the infomation about the current git repo. This is powered by [git-repo-info](https://github.com/rwjblue/git-repo-info).
+It exports the infomation about the current git repo. This is powered by [git-repo-info](https://github.com/rwjblue/git-repo-info) and [ci-info](https://github.com/watson/ci-info).
 
 ```ts
 import {
+  CI,
   github,
   sha,
   abbreviatedSha,
