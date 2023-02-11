@@ -8,7 +8,7 @@ importers:
       '@types/parse-github-url': ^1.0.0
       '@types/remote-origin-url': ^2.0.1
       bumpp: ^8.2.1
-      ci-info: ^3.7.1
+      ci-info: ^3.8.0
       date-fns: ^2.29.3
       git-repo-info: ^2.1.1
       parse-github-url: ^1.0.2
@@ -19,7 +19,7 @@ importers:
       vite: ^4.1.1
       vitest: ^0.28.4
     dependencies:
-      ci-info: 3.7.1
+      ci-info: 3.8.0
       git-repo-info: 2.1.1
       parse-github-url: 1.0.2
       remote-origin-url: 2.0.0
@@ -809,8 +809,8 @@ packages:
     resolution: {integrity: sha512-BrgHpW9NURQgzoNyjfq0Wu6VFO6D7IZEmJNdtgNqpzGG8RuNFHt2jQxWlAs4HMe119chBnv+34syEZtc6IhLtA==}
     dev: true
 
-  /ci-info/3.7.1:
-    resolution: {integrity: sha512-4jYS4MOAaCIStSRwiuxc4B8MYhIe676yO1sYGzARnjXkWpmzZMMYxY6zu8WYWDhSuth5zhrQ1rhNSibyyvv4/w==}
+  /ci-info/3.8.0:
+    resolution: {integrity: sha512-eXTggHWSooYhq49F2opQhuHWgzucfF2YgODK4e1566GQs5BIfP30B0oenwBJHfWxAs2fyPB1s7Mg949zLf61Yw==}
     engines: {node: '>=8'}
     dev: false
 
