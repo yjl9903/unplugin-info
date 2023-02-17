@@ -55,7 +55,7 @@
     "remote-origin-url": "^2.0.0"
   },
   "devDependencies": {
-    "@types/node": "^18.13.0",
+    "@types/node": "^18.14.0",
     "@types/parse-github-url": "^1.0.0",
     "@types/remote-origin-url": "^2.0.1",
     "bumpp": "^8.2.1",
