@@ -60,7 +60,7 @@
     "@types/remote-origin-url": "^2.0.1",
     "bumpp": "^9.0.0",
     "date-fns": "^2.29.3",
-    "prettier": "^2.8.6",
+    "prettier": "^2.8.7",
     "typescript": "^5.0.2",
     "unbuild": "^1.1.2",
     "vite": "^4.2.1",

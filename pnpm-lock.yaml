@@ -12,7 +12,7 @@ importers:
       date-fns: ^2.29.3
       git-repo-info: ^2.1.1
       parse-github-url: ^1.0.2
-      prettier: ^2.8.6
+      prettier: ^2.8.7
       remote-origin-url: ^2.0.0
       typescript: ^5.0.2
       unbuild: ^1.1.2
@@ -29,7 +29,7 @@ importers:
       '@types/remote-origin-url': 2.0.1
       bumpp: 9.0.0
       date-fns: 2.29.3
-      prettier: 2.8.6
+      prettier: 2.8.7
       typescript: 5.0.2
       unbuild: 1.1.2
       vite: 4.2.1_@types+node@18.15.7
@@ -1356,8 +1356,8 @@ packages:
       source-map-js: 1.0.2
     dev: true
 
-  /prettier/2.8.6:
-    resolution: {integrity: sha512-mtuzdiBbHwPEgl7NxWlqOkithPyp4VN93V7VeHVWBF+ad3I5avc0RVDT4oImXQy9H/AqxA2NSQH8pSxHW6FYbQ==}
+  /prettier/2.8.7:
+    resolution: {integrity: sha512-yPngTo3aXUUmyuTjeTUT75txrf+aMh9FiD7q9ZE/i6r0bPb22g4FsE6Y338PQX1bmfy08i9QQCB7/rcUAVntfw==}
     engines: {node: '>=10.13.0'}
     hasBin: true
     dev: true
