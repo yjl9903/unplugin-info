@@ -11,7 +11,7 @@
     "date-fns": "^2.29.3"
   },
   "devDependencies": {
-    "vite": "^4.2.2",
+    "vite": "^4.3.0",
     "vite-plugin-info": "workspace:*"
   }
 }
