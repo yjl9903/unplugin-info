@@ -1,77 +1,52 @@
-import type { Plugin } from 'vite';
+import fs from 'node:fs'
+import process from 'node:process'
+import path from 'node:path'
+import { createUnplugin } from 'unplugin'
 
-import fs from 'node:fs';
-import path from 'node:path';
+import ci from 'ci-info'
+import getRepoInfo from 'git-repo-info'
 
-import ci from 'ci-info';
-import getRepoInfo from 'git-repo-info';
+import { getRepoUrl } from './repo'
+import type { Options } from './types'
 
-import { getRepoUrl } from './repo';
+export default createUnplugin<Options | undefined>((option) => {
+  const now = new Date()
 
-export interface UserOption {
-  /**
-   * Git repo root path
-   */
-  root?: string;
-
-  /**
-   * Github repo url
-   */
-  github?: string;
-
-  /**
-   * Custom virtual module prefix
-   *
-   * @default '~build'
-   */
-  prefix?: string;
-
-  /**
-   * Pass some meta data to Vite app
-   *
-   * Notice: meta data will be serialized to JSON format
-   */
-  meta?: Record<string | number | symbol, any>;
-}
-
-export default function createInfoPlugin(option?: UserOption): Plugin {
-  const now = new Date();
-
-  const root = path.resolve(option?.root ?? process.cwd());
-  const info = getRepoInfo(root);
-  const github = option?.github ?? getRepoUrl(info, root);
+  const root = path.resolve(option?.root ?? process.cwd())
+  const info = getRepoInfo(root)
+  const github = option?.github ?? getRepoUrl(info, root)
 
   const ModuleName = {
     BuildTime: `${option?.prefix ?? '~build'}/time`,
     BuildInfo: `${option?.prefix ?? '~build'}/info`,
     BuildMeta: `${option?.prefix ?? '~build'}/meta`,
-    BuildPackage: `${option?.prefix ?? '~build'}/package`
-  };
-
+    BuildPackage: `${option?.prefix ?? '~build'}/package`,
+  }
   return {
     name: 'vite-plugin-info',
     resolveId(id) {
       if (
-        ModuleName.BuildTime === id ||
-        ModuleName.BuildInfo === id ||
-        ModuleName.BuildMeta === id ||
-        ModuleName.BuildPackage === id
+        ModuleName.BuildTime === id
+        || ModuleName.BuildInfo === id
+        || ModuleName.BuildMeta === id
+        || ModuleName.BuildPackage === id
       )
-        return '\0' + id;
+        return `\0${id}`
     },
     async load(id) {
-      if (!id.startsWith('\0')) return;
-      id = id.slice(1);
+      if (!id.startsWith('\0'))
+        return
+      id = id.slice(1)
       if (id === ModuleName.BuildTime) {
-        return `const time = new Date(${now.getTime()})\n` + `export default time`;
-      } else if (id === ModuleName.BuildInfo) {
-        if (!info.root || !info.commonGitDir || !info.worktreeGitDir) {
-          this.warn('This may not be a git repo');
-        }
+        return `const time = new Date(${now.getTime()})\n` + 'export default time'
+      }
+      else if (id === ModuleName.BuildInfo) {
+        if (!info.root || !info.commonGitDir || !info.worktreeGitDir)
+          this.warn('This may not be a git repo')
 
         const gen = (key: keyof typeof info) => {
-          return `export const ${key} = ${JSON.stringify(info[key])}`;
-        };
+          return `export const ${key} = ${JSON.stringify(info[key])}`
+        }
 
         return [
           `export const CI = ${ci.isCI ? `"${ci.name}"` : 'null'}`,
@@ -85,15 +60,17 @@ export default function createInfoPlugin(option?: UserOption): Plugin {
           gen('author'),
           gen('authorDate'),
           gen('lastTag'),
-          gen('commitsSinceLastTag')
-        ].join('\n');
-      } else if (id === ModuleName.BuildMeta) {
+          gen('commitsSinceLastTag'),
+        ].join('\n')
+      }
+      else if (id === ModuleName.BuildMeta) {
         const body = Object.entries(option?.meta ?? {}).map(
-          ([key, value]) => `export const ${key} = ${JSON.stringify(value, null, 2)};`
-        );
-        return body.join('\n');
-      } else if (id === ModuleName.BuildPackage) {
-        const pkg = JSON.parse(fs.readFileSync(path.join(root, 'package.json'), 'utf-8'));
+          ([key, value]) => `export const ${key} = ${JSON.stringify(value, null, 2)};`,
+        )
+        return body.join('\n')
+      }
+      else if (id === ModuleName.BuildPackage) {
+        const pkg = JSON.parse(fs.readFileSync(path.join(root, 'package.json'), 'utf-8'))
         const entries = Object.entries({
           name: '',
           version: '0.0.0',
@@ -101,14 +78,14 @@ export default function createInfoPlugin(option?: UserOption): Plugin {
           keywords: [],
           license: '',
           author: '',
-          ...pkg
+          ...pkg,
         }).filter(([key]) =>
-          ['name', 'version', 'description', 'keywords', 'license', 'author'].includes(key)
-        );
+          ['name', 'version', 'description', 'keywords', 'license', 'author'].includes(key),
+        )
         return entries
           .map(([key, value]) => `export const ${key} = ${JSON.stringify(value, null, 2)};`)
-          .join('\n');
+          .join('\n')
       }
-    }
-  };
-}
+    },
+  }
+})
