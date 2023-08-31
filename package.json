@@ -111,5 +111,6 @@
     "vite": "^4.4.9",
     "vitest": "^0.34.3",
     "webpack": "^5.88.2"
-  }
+  },
+  "packageManager": "pnpm@8.7.0"
 }
