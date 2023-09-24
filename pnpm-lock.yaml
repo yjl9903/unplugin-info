@@ -25,8 +25,8 @@ importers:
         specifier: ^18.17.19
         version: 18.17.19
       '@types/parse-github-url':
-        specifier: ^1.0.0
-        version: 1.0.0
+        specifier: ^1.0.1
+        version: 1.0.1
       '@types/remote-origin-url':
         specifier: ^2.0.1
         version: 2.0.1
@@ -855,8 +855,8 @@ packages:
     resolution: {integrity: sha512-+pMhShR3Or5GR0/sp4Da7FnhVmTalWm81M6MkEldbwjETSaPalw138Z4KdpQaistvqQxLB7Cy4xwYdxpbSOs9Q==}
     dev: true
 
-  /@types/parse-github-url@1.0.0:
-    resolution: {integrity: sha512-YNsYjdFmlfwIUGc47jfkb4BvFH9rdVbw80DxqSIQzQ3QpgaekmH2BcGKmEENzQRkeODoT/GiDrsJeztni+diAQ==}
+  /@types/parse-github-url@1.0.1:
+    resolution: {integrity: sha512-A3ijZN6krCXaT7jCRGHwp35DVL9M3zYFWazmYE8YVaqijMpLej2TV5a9lk1BLwaCmWVT7c/9YfsX02IvlC3U5w==}
     dependencies:
       '@types/node': 18.17.19
     dev: true
