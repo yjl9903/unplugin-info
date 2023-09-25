@@ -9,10 +9,10 @@ importers:
   .:
     dependencies:
       '@nuxt/kit':
-        specifier: ^3
+        specifier: ^3.7.3
         version: 3.7.3(rollup@3.29.3)
       '@nuxt/schema':
-        specifier: ^3
+        specifier: ^3.7.3
         version: 3.7.3(rollup@3.29.3)
       ci-info:
         specifier: ^3.8.0
