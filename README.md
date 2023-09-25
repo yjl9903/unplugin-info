@@ -8,7 +8,7 @@ This plugin helps you add build timestamp / commit SHA / ... to your application
 
 > This pacakge was originally named [vite-plugin-info](https://www.npmjs.com/package/vite-plugin-info). Now it has been refactored using [unplugin](https://www.npmjs.com/package/unplugin) to support more tools.
 >
-> However, you can still use [vite-plugin-info](https://www.npmjs.com/package/vite-plugin-info) since it works fine. Thanks to the compatibility of Vite.
+> However, you can still use [vite-plugin-info](https://www.npmjs.com/package/vite-plugin-info) since it works fine. Thanks to the compatibility of Vite. And the source code of [vite-plugin-info](https://www.npmjs.com/package/vite-plugin-info) is [here](https://github.com/yjl9903/unplugin-info/tree/vite-plugin-info).
 
 ## Installation
 
