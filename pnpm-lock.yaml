@@ -61,7 +61,7 @@ importers:
         specifier: ^3.28.1
         version: 3.29.3
       tsx:
-        specifier: ^3.12.7
+        specifier: ^3.13.0
         version: 3.13.0
       typescript:
         specifier: ^5.2.2
