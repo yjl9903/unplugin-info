@@ -21,7 +21,7 @@ importers:
         specifier: ^2.0.0
         version: 2.0.0
       unplugin:
-        specifier: ^1.4.0
+        specifier: ^1.5.0
         version: 1.5.0
     devDependencies:
       '@types/node':
