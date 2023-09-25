@@ -29,6 +29,11 @@
       "require": "./dist/index.cjs"
     },
     "./*": "./*",
+    "./astro": {
+      "types": "./dist/astro.d.ts",
+      "import": "./dist/astro.mjs",
+      "require": "./dist/astro.cjs"
+    },
     "./vite": {
       "types": "./dist/vite.d.ts",
       "import": "./dist/vite.mjs",
