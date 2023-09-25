@@ -6,6 +6,10 @@ Export build information as virutal module.
 
 This plugin helps you add build timestamp / commit SHA / ... to your application. So you can easily check whether the production version meets your expectations.
 
+> This pacakge was originally named [vite-plugin-info](https://www.npmjs.com/package/vite-plugin-info). Now it has been refactored using [unplugin](https://www.npmjs.com/package/unplugin) to support more tools.
+>
+> However, you can still use [vite-plugin-info](https://www.npmjs.com/package/vite-plugin-info) since it works fine. Thanks to the compatibility of Vite.
+
 ## Installation
 
 ```bash
