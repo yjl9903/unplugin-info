@@ -54,9 +54,6 @@
       "import": "./dist/nuxt.mjs",
       "require": "./dist/nuxt.cjs"
     },
-    "./types": {
-      "types": "./dist/types.d.ts"
-    },
     "./client": {
       "types": "./client.d.ts"
     }

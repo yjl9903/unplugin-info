@@ -1,3 +1,3 @@
-import unplugin from '.'
+import { UnpluginInfo } from './core';
 
-export default unplugin.rollup
+export default UnpluginInfo.rollup;

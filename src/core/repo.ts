@@ -6,6 +6,7 @@ import fs from 'node:fs';
 import path from 'node:path';
 
 import type { GitRepoInfo } from 'git-repo-info';
+
 import parseGithubUrl from 'parse-github-url';
 import remoteOriginUrl from 'remote-origin-url';
 
