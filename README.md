@@ -16,19 +16,155 @@ This plugin helps you add build timestamp / commit SHA / ... to your application
 npm i -D unplugin-info
 ```
 
-Add plugin `unplugin-info` to your `vite.config.ts`.
+<details>
+<summary>Vite</summary><br>
 
 ```ts
 // vite.config.ts
-import { defineConfig } from 'vite'
-import BuildInfo from 'unplugin-info'
+
+import Info from 'unplugin-info/vite';
 
 export default defineConfig({
   plugins: [
-    BuildInfo()
+    Info()
   ]
-})
+});
 ```
+
+<br></details>
+
+<details>
+<summary>Rollup</summary><br>
+
+```ts
+// rollup.config.js
+
+import Info from 'unplugin-info/rollup';
+
+export default {
+  plugins: [
+    Info()
+  ]
+};
+```
+
+<br></details>
+
+<details>
+<summary>Webpack</summary><br>
+
+```ts
+// webpack.config.js
+
+module.exports = {
+  /* ... */
+  plugins: [
+    require('unplugin-info/webpack')()
+  ]
+};
+```
+
+<br></details>
+
+<details>
+<summary>Nuxt</summary><br>
+
+```ts
+// nuxt.config.ts
+
+export default defineNuxtConfig({
+  modules: ['unplugin-info/nuxt']
+});
+```
+
+<br></details>
+
+<details>
+<summary>Vue CLI</summary><br>
+
+```ts
+// vue.config.js
+
+module.exports = {
+  configureWebpack: {
+    plugins: [
+      require('unplugin-info/webpack')()
+    ]
+  }
+};
+```
+
+<br></details>
+
+<details>
+<summary>Quasar</summary><br>
+
+```ts
+// quasar.conf.js [Vite]
+module.exports = {
+  vitePlugins: [
+    [
+      'unplugin-info/vite',
+      {
+        /* options */
+      }
+    ]
+  ]
+};
+```
+
+```ts
+// quasar.conf.js [Webpack]
+const Info = require('unplugin-info/webpack');
+
+module.exports = {
+  build: {
+    chainWebpack(chain) {
+      chain.plugin('unplugin-info').use(
+        Info()
+      );
+    }
+  }
+};
+```
+
+<br></details>
+
+<details>
+<summary>esbuild</summary><br>
+
+```ts
+// esbuild.config.js
+import { build } from 'esbuild';
+
+build({
+  /* ... */
+  plugins: [
+    require('unplugin-info/esbuild')({
+      /* options */
+    }),
+  ],
+});
+```
+
+<br></details>
+
+<details>
+<summary>Astro</summary><br>
+
+```ts
+// astro.config.mjs
+
+import Info from 'unplugin-info/astro';
+
+export default defineConfig({
+  integrations: [
+    Info()
+  ],
+});
+```
+
+<br></details>
 
 ## Usage
 
