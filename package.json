@@ -100,7 +100,7 @@
     "date-fns": "^2.30.0",
     "fast-glob": "^3.3.1",
     "prettier": "^3.0.3",
-    "rollup": "^3.28.1",
+    "rollup": "^3.29.3",
     "tsx": "^3.13.0",
     "typescript": "^5.2.2",
     "unbuild": "^2.0.0",
@@ -112,7 +112,7 @@
     "@nuxt/kit": "^3.7.3",
     "@nuxt/schema": "^3.7.3",
     "esbuild": "*",
-    "rollup": "^3",
+    "rollup": "^3 || ^4",
     "vite": ">=3.2.7",
     "webpack": "^4 || ^5"
   },
