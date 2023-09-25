@@ -23,7 +23,7 @@ export default createUnplugin<Options | undefined>((option) => {
     BuildPackage: `${option?.prefix ?? '~build'}/package`,
   }
   return {
-    name: 'vite-plugin-info',
+    name: 'unplugin-info',
     resolveId(id) {
       if (
         ModuleName.BuildTime === id

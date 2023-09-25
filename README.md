@@ -1,6 +1,6 @@
-# vite-plugin-info
+# unplugin-info
 
-[![version](https://img.shields.io/npm/v/vite-plugin-info?label=vite-plugin-info)](https://www.npmjs.com/package/vite-plugin-info) [![install size](https://packagephobia.com/badge?p=vite-plugin-info)](https://packagephobia.com/result?p=vite-plugin-info) [![CI](https://github.com/yjl9903/vite-plugin-info/actions/workflows/ci.yml/badge.svg)](https://github.com/yjl9903/vite-plugin-info/actions/workflows/ci.yml)
+[![version](https://img.shields.io/npm/v/unplugin-info?label=unplugin-info)](https://www.npmjs.com/package/unplugin-info) [![install size](https://packagephobia.com/badge?p=unplugin-info)](https://packagephobia.com/result?p=unplugin-info) [![CI](https://github.com/yjl9903/unplugin-info/actions/workflows/ci.yml/badge.svg)](https://github.com/yjl9903/unplugin-info/actions/workflows/ci.yml)
 
 Export build information as Vite virutal module.
 
@@ -9,15 +9,15 @@ This plugin helps you add build timestamp / commit SHA / ... to your application
 ## Installation
 
 ```bash
-npm i -D vite-plugin-info
+npm i -D unplugin-info
 ```
 
-Add plugin `vite-plugin-info` to your `vite.config.ts`.
+Add plugin `unplugin-info` to your `vite.config.ts`.
 
 ```ts
 // vite.config.ts
 import { defineConfig } from 'vite'
-import BuildInfo from 'vite-plugin-info'
+import BuildInfo from 'unplugin-info'
 
 export default defineConfig({
   plugins: [
@@ -28,7 +28,7 @@ export default defineConfig({
 
 ## Usage
 
-`vite-plugin-info` creates three virtual modules, `~build/time`, `~build/info`, and `~build/meta`.
+`unplugin-info` creates three virtual modules, `~build/time`, `~build/info`, and `~build/meta`.
 
 ### ~build/time
 

@@ -12,6 +12,6 @@
   },
   "devDependencies": {
     "vite": "^4.4.9",
-    "vite-plugin-info": "workspace:*"
+    "unplugin-info": "workspace:*"
   }
 }

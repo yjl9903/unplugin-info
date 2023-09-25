@@ -12,7 +12,7 @@ describe('build timestamp', () => {
 describe('build info', () => {
   it('should work', async () => {
     const { github } = await import('~build/info');
-    expect(github).toMatchInlineSnapshot('"https://github.com/yjl9903/vite-plugin-info"');
+    expect(github).toMatchInlineSnapshot('"https://github.com/yjl9903/unplugin-info"');
   });
 });
 
