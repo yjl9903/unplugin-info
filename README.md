@@ -2,7 +2,7 @@
 
 [![version](https://img.shields.io/npm/v/unplugin-info?label=unplugin-info)](https://www.npmjs.com/package/unplugin-info) [![install size](https://packagephobia.com/badge?p=unplugin-info)](https://packagephobia.com/result?p=unplugin-info) [![CI](https://github.com/yjl9903/unplugin-info/actions/workflows/ci.yml/badge.svg)](https://github.com/yjl9903/unplugin-info/actions/workflows/ci.yml)
 
-Export build information as Vite virutal module.
+Export build information as virutal module.
 
 This plugin helps you add build timestamp / commit SHA / ... to your application. So you can easily check whether the production version meets your expectations.
 
@@ -110,4 +110,4 @@ import { name, version } from '~build/package';
 
 ## License
 
-MIT License © 2021 [XLor](https://github.com/yjl9903)
+MIT License © 2023 [XLor](https://github.com/yjl9903)
