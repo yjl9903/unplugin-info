@@ -40,8 +40,8 @@ importers:
         specifier: ^1.0.1
         version: 1.0.1
       '@types/remote-origin-url':
-        specifier: ^2.0.1
-        version: 2.0.1
+        specifier: ^2.0.2
+        version: 2.0.2
       bumpp:
         specifier: ^9.2.0
         version: 9.2.0
@@ -908,8 +908,8 @@ packages:
       '@types/node': 18.18.0
     dev: true
 
-  /@types/remote-origin-url@2.0.1:
-    resolution: {integrity: sha512-huSEm5fBPjsp0NE+NjmiCbDfCwLPwyPIhkhp3Acwwqe4rhn2gg6XcdKUiKu1lkhjjTAtrRV0L7jyWTlWP8K6MQ==}
+  /@types/remote-origin-url@2.0.2:
+    resolution: {integrity: sha512-8O/wSuiuZNGP7lL3kD17JtAH8WfZxb+G8QxaU2IvnmpX1dcOZMyafRLs3G8oHpUpsmE6Bri0D+vlkdjptno7mg==}
     dev: true
 
   /@types/resolve@1.20.2:
