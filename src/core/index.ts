@@ -54,6 +54,7 @@ export const UnpluginInfo = createUnplugin<Options | undefined>((option) => {
           `export const github = ${JSON.stringify(github ?? null)}`,
           gen('sha'),
           gen('abbreviatedSha'),
+          gen('branch'),
           gen('tag'),
           gen('committer'),
           gen('committerDate'),
