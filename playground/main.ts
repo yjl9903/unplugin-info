@@ -2,6 +2,7 @@ import now from '~build/time';
 import {
   CI,
   github,
+  branch,
   sha,
   abbreviatedSha,
   tag,
@@ -31,6 +32,7 @@ function append(text: string) {
 append('Build time: ' + format(now, 'yyyy-MM-dd hh:mm'));
 append('CI: ' + (CI ? CI : 'Not a CI env'));
 append('Github: ' + (github ? github : 'Not a github'));
+append('branch: ' + branch);
 append('sha: ' + sha);
 append('abbreviatedSha: ' + abbreviatedSha);
 append('tag: ' + tag);
