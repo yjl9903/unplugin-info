@@ -21,27 +21,25 @@ export const UnpluginInfo = createUnplugin<Options | undefined>((option) => {
 
   const ModuleName = {
     BuildTime: `${option?.prefix ?? '~build'}/time`,
+    BuildGit: `${option?.prefix ?? '~build'}/git`,
     BuildInfo: `${option?.prefix ?? '~build'}/info`,
     BuildMeta: `${option?.prefix ?? '~build'}/meta`,
     BuildPackage: `${option?.prefix ?? '~build'}/package`
   };
+
   return {
     name: 'unplugin-info',
     resolveId(id) {
-      if (
-        ModuleName.BuildTime === id ||
-        ModuleName.BuildInfo === id ||
-        ModuleName.BuildMeta === id ||
-        ModuleName.BuildPackage === id
-      )
+      if (Object.values(ModuleName).includes(id)) {
         return `\0${id}`;
+      }
     },
     async load(id) {
       if (!id.startsWith('\0')) return;
       id = id.slice(1);
       if (id === ModuleName.BuildTime) {
         return `const time = new Date(${now.getTime()})\n` + 'export default time';
-      } else if (id === ModuleName.BuildInfo) {
+      } else if (id === ModuleName.BuildInfo || id === ModuleName.BuildGit) {
         if (!info.root || !info.commonGitDir || !info.worktreeGitDir)
           this.warn('This may not be a git repo');
 

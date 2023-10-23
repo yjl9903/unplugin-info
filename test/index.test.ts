@@ -14,6 +14,11 @@ describe('build info', () => {
     const { github } = await import('~build/info');
     expect(github).toMatchInlineSnapshot('"https://github.com/yjl9903/unplugin-info"');
   });
+
+  it('should use git alias', async () => {
+    const { github } = await import('~build/git');
+    expect(github).toMatchInlineSnapshot('"https://github.com/yjl9903/unplugin-info"');
+  });
 });
 
 describe('build meta', () => {
