@@ -168,7 +168,30 @@ export default defineConfig({
 
 ## Usage
 
-`unplugin-info` creates three virtual modules, `~build/time`, `~build/info`, and `~build/meta`.
+`unplugin-info` creates several virtual modules, `~build/time`, `~build/git`, `~build/ci`, `~build/package`, and `~build/meta`.
+
+You can just import these modules as usual, and do anything with them. Common use cases may be like:
+
+```ts
+// main.ts
+
+import now from '~build/time'
+import { sha } from '~build/git'
+
+// console log the build info
+console.log(`Build ${sha} at ${now}`)
+```
+
+```tsx
+// App.tsx
+
+import now from '~build/time'
+
+// Render it in your app
+function App() {
+  return <span>{now.toLocaleString()}</span>
+}
+```
 
 ### ~build/time
 
