@@ -49,9 +49,6 @@ declare module '~build/info' {
 }
 
 declare module '~build/git' {
-  /** CI environment name */
-  export const CI: string | null;
-
   /** Github repo url */
   export const github: string | null;
 
@@ -90,6 +87,29 @@ declare module '~build/git' {
 
   /** The commit message for the current SHA */
   export const commitMessage: string;
+}
+
+declare module '~build/ci' {
+  /**
+   * Returns a boolean. Will be `true` if the code is running on a CI server,
+   * otherwise `false`.
+   *
+   * Some CI servers not listed here might still trigger the `ci.isCI`
+   * boolean to be set to `true` if they use certain vendor neutral environment
+   * variables. In those cases `ci.name` will be `null` and no vendor specific
+   * boolean will be set to `true`.
+   */
+  export const isCI: boolean;
+
+  /**
+   * Returns a boolean if PR detection is supported for the current CI server.
+   * Will be `true` if a PR is being tested, otherwise `false`. If PR detection is
+   * not supported for the current CI server, the value will be `null`.
+   */
+  export const isPR: boolean | null;
+
+  /** CI environment name */
+  export const name: string | null;
 }
 
 declare module '~build/meta' {}

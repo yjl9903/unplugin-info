@@ -19,6 +19,14 @@ describe('build info', () => {
     const { github } = await import('~build/git');
     expect(github).toMatchInlineSnapshot('"https://github.com/yjl9903/unplugin-info"');
   });
+
+  it('should infer CI', async () => {
+    const ci = await import('ci-info');
+    const { isCI, isPR, name } = await import('~build/ci');
+    expect(isCI).toBe(ci.isCI);
+    expect(isPR).toBe(ci.isPR);
+    expect(name).toBe(ci.name);
+  });
 });
 
 describe('build meta', () => {

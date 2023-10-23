@@ -23,6 +23,7 @@ export const UnpluginInfo = createUnplugin<Options | undefined>((option) => {
     BuildTime: `${option?.prefix ?? '~build'}/time`,
     BuildGit: `${option?.prefix ?? '~build'}/git`,
     BuildInfo: `${option?.prefix ?? '~build'}/info`,
+    BuildCI: `${option?.prefix ?? '~build'}/ci`,
     BuildMeta: `${option?.prefix ?? '~build'}/meta`,
     BuildPackage: `${option?.prefix ?? '~build'}/package`
   };
@@ -37,6 +38,7 @@ export const UnpluginInfo = createUnplugin<Options | undefined>((option) => {
     async load(id) {
       if (!id.startsWith('\0')) return;
       id = id.slice(1);
+
       if (id === ModuleName.BuildTime) {
         return `const time = new Date(${now.getTime()})\n` + 'export default time';
       } else if (id === ModuleName.BuildInfo || id === ModuleName.BuildGit) {
@@ -48,7 +50,9 @@ export const UnpluginInfo = createUnplugin<Options | undefined>((option) => {
         };
 
         return [
-          `export const CI = ${ci.isCI ? `"${ci.name}"` : 'null'}`,
+          id === ModuleName.BuildInfo
+            ? `export const CI = ${ci.isCI ? `"${ci.name}"` : 'null'}`
+            : ``,
           `export const github = ${JSON.stringify(github ?? null)}`,
           gen('sha'),
           gen('abbreviatedSha'),
@@ -61,6 +65,12 @@ export const UnpluginInfo = createUnplugin<Options | undefined>((option) => {
           gen('authorDate'),
           gen('lastTag'),
           gen('commitsSinceLastTag')
+        ].join('\n');
+      } else if (id === ModuleName.BuildCI) {
+        return [
+          `export const isCI = ${ci.isCI !== null ? (ci.isCI ? 'true' : 'false') : 'null'}`,
+          `export const isPR = ${ci.isPR !== null ? (ci.isPR ? 'true' : 'false') : 'null'}`,
+          `export const name = ${ci.name !== null ? `\`${ci.name}\`` : 'null'}`
         ].join('\n');
       } else if (id === ModuleName.BuildMeta) {
         const body = Object.entries(option?.meta ?? {}).map(

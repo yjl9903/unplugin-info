@@ -181,13 +181,12 @@ console.log(now)
 // There will be a log like "Fri Jun 24 2022 16:30:30 GMT+0800 (中国标准时间)"
 ```
 
-### ~build/info
+### ~build/git
 
-It exports the infomation about the current git repo. This is powered by [git-repo-info](https://github.com/rwjblue/git-repo-info) and [ci-info](https://github.com/watson/ci-info).
+It exports the infomation about the current git repo, which is powered by [git-repo-info](https://github.com/rwjblue/git-repo-info).
 
 ```ts
 import {
-  CI,
   github,
   sha,
   abbreviatedSha,
@@ -199,9 +198,17 @@ import {
   author,
   authorDate,
   commitMessage
-} from '~build/info';
+} from '~build/git';
 
 // ...
+```
+
+### ~build/ci
+
+It exports the current CI/CD environment information, which is powered by [ci-info](https://github.com/watson/ci-info).
+
+```ts
+import { isCI, isPR, name } from '~build/ci'
 ```
 
 ### ~build/meta
