@@ -203,6 +203,12 @@ import {
 // ...
 ```
 
+> **Note**
+>
+> From `unplugin-info@0.6.0`, the original virtual module called `~build/info` will be renamed to `~build/git`, and the CI/CD related information will be moved to another virtual module called `~build/ci`.
+>
+> While to avoid break changes to your apps, you can still use `~build/info` with no changes. But we recommend you migrate to the `~build/git` and `~build/ci`.
+
 ### ~build/ci
 
 It exports the current CI/CD environment information, which is powered by [ci-info](https://github.com/watson/ci-info).
