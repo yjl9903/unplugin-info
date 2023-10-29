@@ -90,7 +90,7 @@
     "preversion": "pnpm typecheck && pnpm build"
   },
   "dependencies": {
-    "ci-info": "^3.9.0",
+    "ci-info": "^4.0.0",
     "git-repo-info": "^2.1.1",
     "parse-github-url": "^1.0.2",
     "remote-origin-url": "^2.0.0",
