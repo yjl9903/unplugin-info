@@ -37,8 +37,8 @@ importers:
         specifier: ^20.8.10
         version: 20.8.10
       '@types/parse-github-url':
-        specifier: ^1.0.2
-        version: 1.0.2
+        specifier: ^1.0.3
+        version: 1.0.3
       '@types/remote-origin-url':
         specifier: ^2.0.3
         version: 2.0.3
@@ -1005,8 +1005,8 @@ packages:
       undici-types: 5.26.5
     dev: true
 
-  /@types/parse-github-url@1.0.2:
-    resolution: {integrity: sha512-Cjm9j2JSFcAOrjaRqguYgzdJ+UYkOAbOKzdFzqvILyKqW/Z9hKXQSWMt3fYEC8AiDL5EXTe1zPtts9dS0gKOWQ==}
+  /@types/parse-github-url@1.0.3:
+    resolution: {integrity: sha512-7sTbCVmSVzK/iAsHGIxoqiyAnqix9opZm68lOvaU6DBx9EQ9kHMSp0y7Criu2OCsZ9wDllEyCRU+LU4hPRxXUA==}
     dependencies:
       '@types/node': 20.8.10
     dev: true
