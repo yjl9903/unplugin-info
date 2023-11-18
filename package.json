@@ -97,7 +97,7 @@
     "unplugin": "^1.5.1"
   },
   "devDependencies": {
-    "@types/node": "^20.9.1",
+    "@types/node": "^20.9.2",
     "@types/parse-github-url": "^1.0.3",
     "@types/remote-origin-url": "^2.0.4",
     "bumpp": "^9.2.0",
