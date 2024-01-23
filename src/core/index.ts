@@ -35,6 +35,11 @@ export const UnpluginInfo = createUnplugin<Options | undefined>((option) => {
         return `\0${id}`;
       }
     },
+    loadInclude(id) {
+      if (!id.startsWith('\0')) return false;
+      id = id.slice(1);
+      return Object.values(ModuleName).includes(id);
+    },
     async load(id) {
       if (!id.startsWith('\0')) return;
       id = id.slice(1);
