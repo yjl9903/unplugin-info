@@ -1,0 +1,24 @@
+{
+  "name": "webpack-demo",
+  "version": "1.0.0",
+  "description": "",
+  "private": true,
+  "scripts": {
+    "dev": "webpack serve --config webpack.config.ts --mode development",
+    "build": "webpack --config webpack.config.ts --mode production",
+    "typeCheck": "tsc --noEmit --project .",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "license": "MIT",
+  "devDependencies": {
+    "html-webpack-plugin": "^5.6.0",
+    "ts-loader": "^9.5.1",
+    "ts-node": "^10.9.2",
+    "typescript": "^5.3.3",
+    "unplugin-info": "workspace:*",
+    "webpack": "^5.90.0",
+    "webpack-cli": "^5.1.4",
+    "webpack-dev-server": "^4.15.1"
+  }
+}
