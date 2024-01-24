@@ -1,93 +1,92 @@
-
 declare module '~build/time' {
-  const time: Date
+  const time: Date;
 
-  export = time
+  export = time;
 }
 
 declare module '~build/info' {
   /** CI environment name */
-  export const CI: string | null
+  export const CI: string | null;
 
   /** Github repo url */
-  export const github: string | null
+  export const github: string | null;
 
   /** The current branch */
-  export const branch: string
+  export const branch: string;
 
   /** SHA of the current commit */
-  export const sha: string
+  export const sha: string;
 
   /** The first 10 chars of the current SHA */
-  export const abbreviatedSha: string
+  export const abbreviatedSha: string;
 
   /** The tag for the current SHA (or `null` if no tag exists) */
-  export const tag: string | null
+  export const tag: string | null;
 
   /** Tag for the closest tagged ancestor (or `null` if no ancestor is tagged) */
-  export const lastTag: string | null
+  export const lastTag: string | null;
 
   /**
    * Number of commits since the closest tagged ancestor.
    * `0` if this commit is tagged, or `Infinity` if no ancestor is tagged.
    */
-  export const commitsSinceLastTag: number
+  export const commitsSinceLastTag: number;
 
   /** The committer of the current SHA */
-  export const committer: string
+  export const committer: string;
 
   /** The commit date of the current SHA */
-  export const committerDate: string
+  export const committerDate: string;
 
   /** The author for the current SHA */
-  export const author: string
+  export const author: string;
 
   /** The authored date for the current SHA */
-  export const authorDate: string
+  export const authorDate: string;
 
   /** The commit message for the current SHA */
-  export const commitMessage: string
+  export const commitMessage: string;
 }
 
 declare module '~build/git' {
   /** Github repo url */
-  export const github: string | null
+  export const github: string | null;
 
   /** The current branch */
-  export const branch: string
+  export const branch: string;
 
   /** SHA of the current commit */
-  export const sha: string
+  export const sha: string;
 
   /** The first 10 chars of the current SHA */
-  export const abbreviatedSha: string
+  export const abbreviatedSha: string;
 
   /** The tag for the current SHA (or `null` if no tag exists) */
-  export const tag: string | null
+  export const tag: string | null;
 
   /** Tag for the closest tagged ancestor (or `null` if no ancestor is tagged) */
-  export const lastTag: string | null
+  export const lastTag: string | null;
 
   /**
    * Number of commits since the closest tagged ancestor.
    * `0` if this commit is tagged, or `Infinity` if no ancestor is tagged.
    */
-  export const commitsSinceLastTag: number
+  export const commitsSinceLastTag: number;
 
   /** The committer of the current SHA */
-  export const committer: string
+  export const committer: string;
 
   /** The commit date of the current SHA */
-  export const committerDate: string
+  export const committerDate: string;
 
   /** The author for the current SHA */
-  export const author: string
+  export const author: string;
 
   /** The authored date for the current SHA */
-  export const authorDate: string
+  export const authorDate: string;
 
   /** The commit message for the current SHA */
-  export const commitMessage: string
+  export const commitMessage: string;
 }
 
 declare module '~build/ci' {
@@ -100,37 +99,37 @@ declare module '~build/ci' {
    * variables. In those cases `ci.name` will be `null` and no vendor specific
    * boolean will be set to `true`.
    */
-  export const isCI: boolean
+  export const isCI: boolean;
 
   /**
    * Returns a boolean if PR detection is supported for the current CI server.
    * Will be `true` if a PR is being tested, otherwise `false`. If PR detection is
    * not supported for the current CI server, the value will be `null`.
    */
-  export const isPR: boolean | null
+  export const isPR: boolean | null;
 
   /** CI environment name */
-  export const name: string | null
+  export const name: string | null;
 }
 
 declare module '~build/meta' {}
 
 declare module '~build/package' {
   /** Package name */
-  export const name: string
+  export const name: string;
 
   /** Package version */
-  export const version: string
+  export const version: string;
 
   /** Package description */
-  export const description: string
+  export const description: string;
 
   /** Package keywords */
-  export const keywords: string[]
+  export const keywords: string[];
 
   /** Package license */
-  export const license: string
+  export const license: string;
 
   /** Package author */
-  export const author: string
+  export const author: string;
 }
