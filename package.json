@@ -86,7 +86,7 @@
     "dev:vite": "pnpm -C examples/vite dev",
     "dev:webpack": "pnpm -C examples/webpack dev",
     "format": "prettier --write playground examples src",
-    "release": "bumpp package.json ./playground/package.json --commit --push --tag && pnpm publish",
+    "release": "bumpp package.json examples/*/package.json --commit --push --tag && pnpm publish",
     "test": "vitest",
     "typecheck": "tsc --noEmit",
     "preversion": "pnpm typecheck && pnpm build"
