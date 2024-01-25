@@ -79,6 +79,19 @@ importers:
         specifier: ^5.90.0
         version: 5.90.0(esbuild@0.19.11)(webpack-cli@5.1.4)
 
+  examples/vite:
+    dependencies:
+      date-fns:
+        specifier: ^3.3.1
+        version: 3.3.1
+    devDependencies:
+      unplugin-info:
+        specifier: workspace:*
+        version: link:../..
+      vite:
+        specifier: ^5.0.12
+        version: 5.0.12(@types/node@20.11.6)
+
   examples/webpack:
     devDependencies:
       html-webpack-plugin:
@@ -105,19 +118,6 @@ importers:
       webpack-dev-server:
         specifier: ^4.15.1
         version: 4.15.1(webpack-cli@5.1.4)(webpack@5.90.0)
-
-  playground:
-    dependencies:
-      date-fns:
-        specifier: ^3.3.1
-        version: 3.3.1
-    devDependencies:
-      unplugin-info:
-        specifier: workspace:*
-        version: link:..
-      vite:
-        specifier: ^5.0.12
-        version: 5.0.12(@types/node@20.11.6)
 
 packages:
 

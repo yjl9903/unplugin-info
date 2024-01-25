@@ -80,9 +80,11 @@
   ],
   "scripts": {
     "build": "unbuild",
-    "build:play": "pnpm -C playground build",
+    "build:vite": "pnpm -C examples/vite build",
+    "build:webpack": "pnpm -C examples/webpack build",
     "dev": "unbuild --stub",
-    "dev:play": "pnpm -C playground dev",
+    "dev:vite": "pnpm -C examples/vite dev",
+    "dev:webpack": "pnpm -C examples/webpack dev",
     "format": "prettier --write playground examples src",
     "release": "bumpp package.json ./playground/package.json --commit --push --tag && pnpm publish",
     "test": "vitest",
