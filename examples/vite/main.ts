@@ -21,30 +21,36 @@ import { format } from 'date-fns';
 
 console.log('Build time:', now);
 
-const buildTime = document.querySelector('#build-time') as HTMLElement;
+const buildTime = document.querySelector('.container') as HTMLElement;
 
-function append(text: string) {
-  const p = document.createElement('p');
-  p.innerText = text;
+function append(key: string, value: string | number | null) {
+  const p = document.createElement('div');
+  const span1 = document.createElement('span');
+  span1.style.fontWeight = 'bold';
+  span1.innerText = key;
+  const span2 = document.createElement('span');
+  span2.innerText = value !== null ? '' + value : 'null';
+  p.appendChild(span1);
+  p.appendChild(span2);
   buildTime.appendChild(p);
 }
 
-append('Build time: ' + format(now, 'yyyy-MM-dd hh:mm'));
-append('CI: ' + (CI ? CI : 'Not a CI env'));
-append('Github: ' + (github ? github : 'Not a github'));
-append('branch: ' + branch);
-append('sha: ' + sha);
-append('abbreviatedSha: ' + abbreviatedSha);
-append('tag: ' + tag);
-append('lastTag: ' + lastTag);
-append('commitsSinceLastTag: ' + commitsSinceLastTag);
-append('committer: ' + committer);
-append('committerDate: ' + committerDate);
-append('author: ' + author);
-append('authorDate: ' + authorDate);
-append('commitMessage: ' + commitMessage);
+append('Build time: ', format(now, 'yyyy-MM-dd hh:mm'));
+append('CI: ', CI ? CI : 'Not a CI env');
+append('Github: ', github ? github : 'Not a github');
+append('Branch: ', branch);
+append('SHA: ', sha);
+append('AbbreviatedSha: ', abbreviatedSha);
+append('Tag: ', tag);
+append('LastTag: ', lastTag);
+append('CommitsSinceLastTag: ', commitsSinceLastTag);
+append('Committer: ', committer);
+append('CommitterDate: ', committerDate);
+append('Author: ', author);
+append('AuthorDate: ', authorDate);
+append('CommitMessage: ', commitMessage);
 
-append('Message: ' + message);
+append('Message: ', message);
 
-append('Package name: ' + name);
-append('Package version: ' + version);
+append('Package name: ', name);
+append('Package version: ', version);

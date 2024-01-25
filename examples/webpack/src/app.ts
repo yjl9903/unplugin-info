@@ -1,7 +1,7 @@
-import { name, version } from '~build/package';
 import time from '~build/time';
 import { isCI } from '~build/ci';
 import { github } from '~build/git';
+import { name, version } from '~build/package';
 
 function component(...args: string[]) {
   const element = document.createElement('div');
