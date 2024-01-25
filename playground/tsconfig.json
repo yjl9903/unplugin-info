@@ -3,10 +3,7 @@
     "esModuleInterop": true,
     "isolatedModules": true,
     "jsx": "preserve",
-    "lib": [
-      "ESNext",
-      "DOM"
-    ],
+    "lib": ["ESNext", "DOM"],
     "module": "ESNext",
     "moduleResolution": "Node",
     "resolveJsonModule": true,
@@ -14,16 +11,9 @@
     "sourceMap": true,
     "strict": true,
     "target": "ESNext",
-    "types": [
-      "unplugin-info/client"
-    ],
+    "types": ["unplugin-info/client"],
     "useDefineForClassFields": true
   },
-  "exclude": [
-    "**/dist/**"
-  ],
-  "include": [
-    "./*.d.ts",
-    "./*.ts"
-  ]
+  "exclude": ["**/dist/**"],
+  "include": ["./*.d.ts", "./*.ts"]
 }
