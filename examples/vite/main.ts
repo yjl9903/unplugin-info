@@ -19,9 +19,7 @@ import { name, version } from '~build/package';
 
 import { format } from 'date-fns';
 
-console.log('Build time:', now);
-
-const buildTime = document.querySelector('.container') as HTMLElement;
+const buildTime = document.querySelector<HTMLElement>('.container')!;
 
 function append(key: string, value: string | number | null) {
   const p = document.createElement('div');
@@ -34,6 +32,11 @@ function append(key: string, value: string | number | null) {
   p.appendChild(span2);
   buildTime.appendChild(p);
 }
+
+const h1 = document.createElement('h1');
+// use caution with `innerHTML`
+h1.innerHTML = `<a href="${github}" target="_blank">unplugin-info<a>`;
+buildTime.appendChild(h1);
 
 append('Build time: ', format(now, 'yyyy-MM-dd hh:mm'));
 append('CI: ', CI ? CI : 'Not a CI env');
@@ -54,3 +57,6 @@ append('Message: ', message);
 
 append('Package name: ', name);
 append('Package version: ', version);
+append('', '');
+
+append('You can also open console and play around with it.', '');
