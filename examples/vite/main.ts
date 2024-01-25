@@ -18,6 +18,7 @@ import { name, version } from '~build/package';
 import { isCI, name as ciName } from '~build/ci';
 
 import { format } from 'date-fns';
+import './playground';
 
 const buildTime = document.querySelector<HTMLElement>('.container')!;
 
