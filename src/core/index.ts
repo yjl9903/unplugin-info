@@ -7,7 +7,6 @@ import { createUnplugin } from 'unplugin';
 
 import type { Options } from './types';
 
-import { getRepoUrl } from './repo';
 import { getRepoInfo } from './git';
 
 export * from './types';
@@ -49,7 +48,7 @@ export const UnpluginInfo = createUnplugin<Options | undefined>((option) => {
         return `const time = new Date(${now.getTime()})\n` + 'export default time';
       } else if (id === ModuleName.BuildInfo || id === ModuleName.BuildGit) {
         const info = await getRepoInfo(root);
-        const github = option?.github ?? getRepoUrl(info, root);
+        const github = option?.github ?? info?.github;
 
         if (id === ModuleName.BuildInfo) {
           this.warn(
