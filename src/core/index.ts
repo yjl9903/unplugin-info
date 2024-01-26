@@ -118,7 +118,7 @@ export const UnpluginInfo = createUnplugin<Options | undefined>((option) => {
                   .map(([k, v]) => k)
               : defaults
         );
-        const entries = Object.entries({
+        const resolved = {
           name: '',
           version: '0.0.0',
           description: '',
@@ -126,7 +126,8 @@ export const UnpluginInfo = createUnplugin<Options | undefined>((option) => {
           license: '',
           author: '',
           ...pkg
-        }).filter(([key]) => keys.has(key));
+        };
+        const entries = [...keys].map((key) => [key, resolved[key]] as const);
         return entries
           .map(([key, value]) => `export const ${key} = ${JSON.stringify(value, null, 2)};`)
           .join('\n');
