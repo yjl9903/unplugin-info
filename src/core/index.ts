@@ -53,7 +53,7 @@ export const UnpluginInfo = createUnplugin<Options | undefined>((option) => {
 
         if (id === ModuleName.BuildInfo) {
           this.warn(
-            `${ModuleName.BuildInfo} is deprecated, please migrate to ${ModuleName.BuildGit}`
+            `${ModuleName.BuildInfo} is deprecated, please migrate to ${ModuleName.BuildGit} and ${ModuleName.BuildCI}`
           );
         }
         if (!info) {
