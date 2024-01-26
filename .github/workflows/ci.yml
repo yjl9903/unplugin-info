@@ -43,6 +43,16 @@ jobs:
           pnpm build:vite
           pnpm build:webpack
 
+      - name: debug
+        run: |
+          HEAD=`git rev-parse HEAD`
+          echo $HEAD
+          git cat-file commit $HEAD
+          pwd
+          ls -l .git/objects/
+          ls -l .git/objects/${HEAD}/
+          ls -l .git/objects/${HEAD:0:2}/
+
       - name: Test
         run: pnpm test
 
