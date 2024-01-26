@@ -18,8 +18,8 @@ import {
   isClean
 } from '~build/git';
 import { message } from '~build/meta';
-import { name, version } from '~build/package';
 import { isCI, name as ciName } from '~build/ci';
+import { name, version, dependencies, devDependencies } from '~build/package';
 
 import { format } from 'date-fns';
 
@@ -66,6 +66,10 @@ append('Message: ', message);
 
 append('Package name: ', name);
 append('Package version: ', version);
+append(
+  'Dependencies: ',
+  [...Object.entries(dependencies), ...Object.entries(devDependencies)].map((d) => d[0]).join(' ,')
+);
 append('', '');
 
 append('You can also open console and play around with it.', '');

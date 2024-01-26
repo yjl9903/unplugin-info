@@ -45,6 +45,30 @@ declare module '~build/git' {
   export const isClean: boolean;
 }
 
+declare module '~build/package' {
+  /** Package name */
+  export const name: string;
+
+  /** Package version */
+  export const version: string;
+
+  /** Package description */
+  export const description: string;
+
+  /** Package keywords */
+  export const keywords: string[];
+
+  /** Package license */
+  export const license: string;
+
+  /** Package author */
+  export const author: string;
+
+  export const dependencies: Record<string, string>;
+
+  export const devDependencies: Record<string, string>;
+}
+
 declare module '~build/meta' {
   export const message: string;
 }

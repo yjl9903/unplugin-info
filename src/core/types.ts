@@ -17,11 +17,9 @@ export interface Options {
   git?: Record<string, (git: SimpleGit) => Promise<any> | any>;
 
   /**
-   * Custom virtual module prefix
-   *
-   * @default '~build'
+   * Filter exported fields of package.json
    */
-  prefix?: string;
+  package?: string[] | Record<string, boolean | null | undefined>;
 
   /**
    * Pass some meta data to Vite app
@@ -29,4 +27,11 @@ export interface Options {
    * Notice: meta data will be serialized to JSON format
    */
   meta?: Record<string | number | symbol, any>;
+
+  /**
+   * Custom virtual module prefix
+   *
+   * @default '~build'
+   */
+  prefix?: string;
 }

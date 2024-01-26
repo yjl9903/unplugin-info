@@ -103,6 +103,21 @@ export const UnpluginInfo = createUnplugin<Options | undefined>((option) => {
         return body.join('\n');
       } else if (id === ModuleName.BuildPackage) {
         const pkg = JSON.parse(fs.readFileSync(path.join(root, 'package.json'), 'utf-8'));
+        const defaults = ['name', 'version', 'description', 'keywords', 'license', 'author'];
+        const keys = new Set(
+          Array.isArray(option?.package)
+            ? [...defaults, ...option.package]
+            : typeof option?.package === 'object'
+              ? Object.entries(
+                  Object.fromEntries([
+                    ...defaults.map((d) => [d, true] as const),
+                    ...Object.entries(option.package)
+                  ])
+                )
+                  .filter(([k, v]) => !!v)
+                  .map(([k, v]) => k)
+              : defaults
+        );
         const entries = Object.entries({
           name: '',
           version: '0.0.0',
@@ -111,9 +126,7 @@ export const UnpluginInfo = createUnplugin<Options | undefined>((option) => {
           license: '',
           author: '',
           ...pkg
-        }).filter(([key]) =>
-          ['name', 'version', 'description', 'keywords', 'license', 'author'].includes(key)
-        );
+        }).filter(([key]) => keys.has(key));
         return entries
           .map(([key, value]) => `export const ${key} = ${JSON.stringify(value, null, 2)};`)
           .join('\n');

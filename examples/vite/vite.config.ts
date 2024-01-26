@@ -12,6 +12,10 @@ export default defineConfig({
           return status.isClean();
         }
       },
+      package: {
+        dependencies: true,
+        devDependencies: true
+      },
       meta: { message: 'This is set from vite.config.ts' }
     })
   ]

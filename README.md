@@ -317,6 +317,24 @@ It exports the information of the current `package.json`.
 import { name, version } from '~build/package';
 ```
 
+You can also **control which fields should be exported**.
+
+```ts
+// vite.config.ts
+
+import Info from 'unplugin-info/vite';
+
+export default defineConfig({
+  plugins: [
+    Info({
+      package: {
+        dependencies: true
+      }
+    })
+  ]
+});
+```
+
 ## TypeScript
 
 If you did not rename the virtual module, custom exported fields, or use `~build/meta`, you can just add `unplugin-info/client` to your `tsconfig.json` types, or add `/// <reference types="unplugin-info/client" />` to your `.d.ts` file.
