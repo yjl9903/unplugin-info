@@ -17,6 +17,12 @@ jobs:
       id-token: write # to verify the deployment originates from an appropriate source
 
     steps:
+      - uses: szenius/set-timezone@v1.2
+        with:
+          timezoneLinux: 'Asia/ShangHai'
+          timezoneMacos: 'Asia/ShangHai'
+          timezoneWindows: 'Asia/ShangHai'
+
       - uses: actions/checkout@v4
         with:
           fetch-depth: 0 # to fetch all history
