@@ -8,11 +8,13 @@
 
 Export build information as virutal module.
 
-This plugin helps you add build timestamp / commit SHA / ... to your application. So you can easily check whether the production version meets your expectations.
+This plugin helps you add **build timestamp** / **commit SHA** / **CI environment** / `package.json` / ... to your application. So you can easily check whether the production version meets your expectations, or config your application.
 
-> This pacakge was originally named [vite-plugin-info](https://www.npmjs.com/package/vite-plugin-info). Now it has been refactored using [unplugin](https://www.npmjs.com/package/unplugin) to support more tools.
+> **Migration Guide from v0 to v1**
 >
-> However, you can still use [vite-plugin-info](https://www.npmjs.com/package/vite-plugin-info) since it works fine. Thanks to the compatibility of Vite. And the source code of [vite-plugin-info](https://www.npmjs.com/package/vite-plugin-info) is [here](https://github.com/yjl9903/unplugin-info/tree/vite-plugin-info).
+> + Move git related information from `~build/info` to `~build/git`
+> + Move CI related information from `~build/info` to `~build/ci`
+> + Remove `commitsSinceLastTag` from `~build/git`
 
 ## Installation
 
@@ -210,7 +212,7 @@ console.log(now)
 
 ### ~build/git
 
-It exports the infomation about the current git repo, which is powered by [git-repo-info](https://github.com/rwjblue/git-repo-info).
+It exports the infomation about the current git repo, which is powered by [simple-git](https://www.npmjs.com/package/simple-git).
 
 ```ts
 import {
@@ -219,10 +221,11 @@ import {
   abbreviatedSha,
   tag,
   lastTag,
-  commitsSinceLastTag,
   committer,
+  committerEmail,
   committerDate,
   author,
+  authorEmail,
   authorDate,
   commitMessage
 } from '~build/git';
@@ -230,11 +233,9 @@ import {
 // ...
 ```
 
-> **Note**
+> **Notice**
 >
 > From `unplugin-info@0.6.0`, the original virtual module called `~build/info` will be renamed to `~build/git`, and the CI/CD related information will be moved to another virtual module called `~build/ci`.
->
-> While to avoid break changes to your apps, you can still use `~build/info` with no changes. But we recommend you migrate to the `~build/git` and `~build/ci`.
 
 ### ~build/ci
 
@@ -287,6 +288,14 @@ It exports the information of the current `package.json`.
 ```ts
 import { name, version } from '~build/package';
 ```
+
+## Relationship with [vite-plugin-info](https://www.npmjs.com/package/vite-plugin-info)
+
+This pacakge was initially called [vite-plugin-info](https://www.npmjs.com/package/vite-plugin-info). It has been refactored using [unplugin](https://www.npmjs.com/package/unplugin) to support additional tools, including Webpack and so on.
+
+We recommend migrating from [vite-plugin-info](https://www.npmjs.com/package/vite-plugin-info) to [unplugin-info](https://www.npmjs.com/package/unplugin-info), as [unplugin-info](https://www.npmjs.com/package/unplugin-info) will continue to be maintained and new features will be added.
+
+However, you can still use [vite-plugin-info](https://www.npmjs.com/package/vite-plugin-info), as it works fine. Thanks to Vite's compatibility, and the source code of [vite-plugin-info](https://www.npmjs.com/package/vite-plugin-info) can be founded [here](https://github.com/yjl9903/unplugin-info/tree/vite-plugin-info).
 
 ## License
 

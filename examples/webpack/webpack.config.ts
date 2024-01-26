@@ -1,8 +1,10 @@
-import HtmlWebpackPlugin from 'html-webpack-plugin';
-import { resolve } from 'node:path';
-import Info from 'unplugin-info/webpack';
 import type { Configuration as WebpackConfiguration } from 'webpack';
 import type { Configuration as WebpackDevServerConfiguration } from 'webpack-dev-server';
+
+import HtmlWebpackPlugin from 'html-webpack-plugin';
+import { resolve } from 'node:path';
+
+import Info from 'unplugin-info/webpack';
 
 interface Configuration extends WebpackConfiguration {
   devServer?: WebpackDevServerConfiguration;

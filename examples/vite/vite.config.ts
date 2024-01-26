@@ -1,5 +1,6 @@
 import { defineConfig } from 'vite';
-import BuildInfo from 'unplugin-info/vite';
+
+import BuildInfo from '../../src/vite';
 
 export default defineConfig({
   base: './',

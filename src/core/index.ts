@@ -3,12 +3,11 @@ import path from 'node:path';
 import process from 'node:process';
 
 import ci from 'ci-info';
-import getRepoInfo from 'git-repo-info';
 import { createUnplugin } from 'unplugin';
 
 import type { Options } from './types';
 
-import { getRepoUrl } from './repo';
+import { getRepoInfo } from './git';
 
 export * from './types';
 
@@ -16,8 +15,6 @@ export const UnpluginInfo = createUnplugin<Options | undefined>((option) => {
   let now: Date;
 
   const root = path.resolve(option?.root ?? process.cwd());
-  const info = getRepoInfo(root);
-  const github = option?.github ?? getRepoUrl(info, root);
 
   const ModuleName = {
     BuildTime: `${option?.prefix ?? '~build'}/time`,
@@ -50,11 +47,20 @@ export const UnpluginInfo = createUnplugin<Options | undefined>((option) => {
       if (id === ModuleName.BuildTime) {
         return `const time = new Date(${now.getTime()})\n` + 'export default time';
       } else if (id === ModuleName.BuildInfo || id === ModuleName.BuildGit) {
-        if (!info.root || !info.commonGitDir || !info.worktreeGitDir)
-          this.warn('This may not be a git repo');
+        const info = await getRepoInfo(root);
+        const github = option?.github ?? info?.github;
 
-        const gen = (key: keyof typeof info) => {
-          return `export const ${key} = ${JSON.stringify(info[key])}`;
+        if (id === ModuleName.BuildInfo) {
+          this.warn(
+            `${ModuleName.BuildInfo} is deprecated, please migrate to ${ModuleName.BuildGit} and ${ModuleName.BuildCI}`
+          );
+        }
+        if (!info) {
+          this.warn('This may not be a git repo');
+        }
+
+        const gen = (key: keyof NonNullable<typeof info>) => {
+          return `export const ${key} = ${info ? JSON.stringify(info[key]) : 'undefined'}`;
         };
 
         return [
@@ -66,13 +72,15 @@ export const UnpluginInfo = createUnplugin<Options | undefined>((option) => {
           gen('abbreviatedSha'),
           gen('branch'),
           gen('tag'),
-          gen('committer'),
-          gen('committerDate'),
-          gen('commitMessage'),
-          gen('author'),
-          gen('authorDate'),
+          gen('tags'),
           gen('lastTag'),
-          gen('commitsSinceLastTag')
+          gen('author'),
+          gen('authorEmail'),
+          gen('authorDate'),
+          gen('committer'),
+          gen('committerEmail'),
+          gen('committerDate'),
+          gen('commitMessage')
         ].join('\n');
       } else if (id === ModuleName.BuildCI) {
         return [

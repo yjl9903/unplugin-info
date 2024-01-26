@@ -8,10 +8,11 @@ import {
   abbreviatedSha,
   tag,
   lastTag,
-  commitsSinceLastTag,
   committer,
+  committerEmail,
   committerDate,
   author,
+  authorEmail,
   authorDate,
   commitMessage
 } from '~build/git';
@@ -48,15 +49,16 @@ append('CI: ', isCI ? ciName : 'Not a CI env');
 append('GitHub: ', github ? github : 'Not a github');
 append('Branch: ', branch);
 append('SHA: ', sha);
-append('AbbreviatedSha: ', abbreviatedSha);
+append('Abbreviated Sha: ', abbreviatedSha);
 append('Tag: ', tag);
-append('LastTag: ', lastTag);
-append('CommitsSinceLastTag: ', commitsSinceLastTag);
+append('Last Tag: ', lastTag);
 append('Committer: ', committer);
-append('CommitterDate: ', committerDate);
+append('Committer Email: ', committerEmail);
+append('Committer Date: ', committerDate);
 append('Author: ', author);
-append('AuthorDate: ', authorDate);
-append('CommitMessage: ', commitMessage);
+append('Author Email: ', authorEmail);
+append('Author Date: ', authorDate);
+append('Commit Message: ', commitMessage);
 
 append('Message: ', message);
 

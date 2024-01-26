@@ -93,12 +93,12 @@
   },
   "dependencies": {
     "ci-info": "^4.0.0",
-    "git-repo-info": "^2.1.1",
-    "parse-github-url": "^1.0.2",
-    "remote-origin-url": "^2.0.0",
+    "git-url-parse": "^14.0.0",
+    "simple-git": "^3.22.0",
     "unplugin": "^1.6.0"
   },
   "devDependencies": {
+    "@types/git-url-parse": "^9.0.3",
     "@types/node": "^20.11.7",
     "@types/parse-github-url": "^1.0.3",
     "@types/remote-origin-url": "^2.0.4",
