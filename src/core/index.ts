@@ -50,8 +50,6 @@ export const UnpluginInfo = createUnplugin<Options | undefined>((option) => {
         if (!info.root || !info.commonGitDir || !info.worktreeGitDir)
           this.warn('This may not be a git repo');
 
-        console.log(info);
-
         const gen = (key: keyof typeof info) => {
           return `export const ${key} = ${JSON.stringify(info[key])}`;
         };
