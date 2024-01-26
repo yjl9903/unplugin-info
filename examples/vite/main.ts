@@ -9,8 +9,10 @@ import {
   tag,
   lastTag,
   committer,
+  committerEmail,
   committerDate,
   author,
+  authorEmail,
   authorDate,
   commitMessage
 } from '~build/git';
@@ -49,12 +51,14 @@ append('Branch: ', branch);
 append('SHA: ', sha);
 append('AbbreviatedSha: ', abbreviatedSha);
 append('Tag: ', tag);
-append('LastTag: ', lastTag);
+append('Last Tag: ', lastTag);
 append('Committer: ', committer);
-append('CommitterDate: ', committerDate);
+append('Committer Email: ', committerEmail);
+append('Committer Date: ', committerDate);
 append('Author: ', author);
-append('AuthorDate: ', authorDate);
-append('CommitMessage: ', commitMessage);
+append('Author Email: ', authorEmail);
+append('Author Date: ', authorDate);
+append('Commit Message: ', commitMessage);
 
 append('Message: ', message);
 
