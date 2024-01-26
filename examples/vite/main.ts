@@ -68,7 +68,7 @@ append('Package name: ', name);
 append('Package version: ', version);
 append(
   'Dependencies: ',
-  [...Object.entries(dependencies), ...Object.entries(devDependencies)].map((d) => d[0]).join(' ,')
+  [...Object.entries(dependencies), ...Object.entries(devDependencies)].map((d) => d[0]).join(', ')
 );
 append('', '');
 

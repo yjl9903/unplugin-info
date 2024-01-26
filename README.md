@@ -335,6 +335,8 @@ export default defineConfig({
 });
 ```
 
+Full example is located at [examples/vite](https://github.com/yjl9903/unplugin-info/blob/main/examples/vite/vite.config.ts).
+
 ## TypeScript
 
 If you did not rename the virtual module, custom exported fields, or use `~build/meta`, you can just add `unplugin-info/client` to your `tsconfig.json` types, or add `/// <reference types="unplugin-info/client" />` to your `.d.ts` file.
