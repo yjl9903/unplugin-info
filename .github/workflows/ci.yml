@@ -11,8 +11,14 @@ on:
 jobs:
   build:
     runs-on: ubuntu-latest
+    permissions:
+      pages: write # to deploy to Pages
+      id-token: write # to verify the deployment originates from an appropriate source
+
     steps:
       - uses: actions/checkout@b4ffde65f46336ab88eb53be808477a3936bae11 # v4
+        with:
+          fetch-depth: 0 # to fetch all history
 
       - name: Setup pnpm
         uses: pnpm/action-setup@v2.4.0
@@ -34,3 +40,14 @@ jobs:
 
       - name: Test
         run: pnpm test
+
+      - name: Upload pages artifacts
+        # https://github.com/actions/upload-pages-artifact
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: 'examples/vite/dist'
+
+      - name: Deploy to GitHub Pages
+        if: github.ref == 'refs/heads/main'
+        # https://github.com/actions/deploy-pages
+        uses: actions/deploy-pages@v4
