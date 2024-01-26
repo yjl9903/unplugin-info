@@ -13,7 +13,7 @@ import { getRepoUrl } from './repo';
 export * from './types';
 
 export const UnpluginInfo = createUnplugin<Options | undefined>((option) => {
-  const now = new Date();
+  let now: Date;
 
   const root = path.resolve(option?.root ?? process.cwd());
   const info = getRepoInfo(root);
@@ -30,6 +30,9 @@ export const UnpluginInfo = createUnplugin<Options | undefined>((option) => {
 
   return {
     name: 'unplugin-info',
+    buildStart() {
+      now = new Date();
+    },
     resolveId(id) {
       if (Object.values(ModuleName).includes(id)) {
         return `\0${id}`;
