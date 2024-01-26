@@ -1,6 +1,6 @@
 import { type SimpleGit, simpleGit } from 'simple-git';
 
-import parseGithubUrl from 'parse-github-url';
+import parseGitUrl from 'git-url-parse';
 
 export async function getRepoInfo(root: string) {
   const git = simpleGit(root);
@@ -101,9 +101,9 @@ export async function getGitHubUrl(git: SimpleGit) {
 
   const url = origin?.refs.fetch;
   if (url) {
-    const parsed = parseGithubUrl(url);
-    if (parsed?.repo) {
-      return { github: `https://${parsed?.host ?? 'github.com'}/${parsed?.repo}` };
+    const parsed = parseGitUrl(url);
+    if (parsed.resource === 'github.com' && parsed.full_name) {
+      return { github: `https://github.com/${parsed.full_name}` };
     }
   }
 
