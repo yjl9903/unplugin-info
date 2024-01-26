@@ -49,7 +49,7 @@ append('CI: ', isCI ? ciName : 'Not a CI env');
 append('GitHub: ', github ? github : 'Not a github');
 append('Branch: ', branch);
 append('SHA: ', sha);
-append('AbbreviatedSha: ', abbreviatedSha);
+append('Abbreviated Sha: ', abbreviatedSha);
 append('Tag: ', tag);
 append('Last Tag: ', lastTag);
 append('Committer: ', committer);
