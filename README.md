@@ -1,6 +1,10 @@
 # unplugin-info
 
-[![version](https://img.shields.io/npm/v/unplugin-info?label=unplugin-info)](https://www.npmjs.com/package/unplugin-info) [![install size](https://packagephobia.com/badge?p=unplugin-info)](https://packagephobia.com/result?p=unplugin-info) [![CI](https://github.com/yjl9903/unplugin-info/actions/workflows/ci.yml/badge.svg)](https://github.com/yjl9903/unplugin-info/actions/workflows/ci.yml)
+[![Demo](https://img.shields.io/badge/unplugin--info-demo-00CCAA)](https://yjl9903.github.io/unplugin-info/)
+[![version](https://img.shields.io/npm/v/unplugin-info?label=unplugin-info)](https://www.npmjs.com/package/unplugin-info)
+[![install size](https://packagephobia.com/badge?p=unplugin-info)](https://packagephobia.com/result?p=unplugin-info)
+[![GitHub License](https://img.shields.io/github/license/yjl9903/unplugin-info)](https://github.com/yjl9903/unplugin-info/blob/main/LICENSE)
+[![CI](https://github.com/yjl9903/unplugin-info/actions/workflows/ci.yml/badge.svg)](https://github.com/yjl9903/unplugin-info/actions/workflows/ci.yml)
 
 Export build information as virutal module.
 
