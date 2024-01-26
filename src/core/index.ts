@@ -99,6 +99,27 @@ export const UnpluginInfo = createUnplugin<Options | undefined>((option) => {
           .map(([key, value]) => `export const ${key} = ${JSON.stringify(value, null, 2)};`)
           .join('\n');
       }
+    },
+    vite: {
+      handleHotUpdate({ file, server }) {
+        // HMR: package.json
+        if (file === normalizePath(path.resolve(root, 'package.json'))) {
+          const module = server.moduleGraph.getModuleById('\0' + ModuleName.BuildPackage);
+          if (module) {
+            // Invalidate module for reloading
+            server.moduleGraph.invalidateModule(module);
+
+            // Reload client
+            server.ws.send({
+              type: 'full-reload'
+            });
+          }
+        }
+      }
     }
   };
 });
+
+function normalizePath(filename: string) {
+  return filename.split(path.win32.sep).join(path.posix.sep);
+}
