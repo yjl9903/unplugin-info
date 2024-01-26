@@ -8,7 +8,6 @@ import {
   abbreviatedSha,
   tag,
   lastTag,
-  commitsSinceLastTag,
   committer,
   committerDate,
   author,
@@ -51,7 +50,6 @@ append('SHA: ', sha);
 append('AbbreviatedSha: ', abbreviatedSha);
 append('Tag: ', tag);
 append('LastTag: ', lastTag);
-append('CommitsSinceLastTag: ', commitsSinceLastTag);
 append('Committer: ', committer);
 append('CommitterDate: ', committerDate);
 append('Author: ', author);
