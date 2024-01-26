@@ -10,7 +10,7 @@ Export build information as virutal module.
 
 This plugin helps you add **build timestamp** / **commit SHA** / **CI environment** / `package.json` / ... to your application. So you can easily check whether the production version meets your expectations, or config your application.
 
-> **Migration Guide from v0 to v1**
+> **Migration from v0 to v1**
 >
 > + Move git related information from `~build/info` to `~build/git`
 > + Move CI related information from `~build/info` to `~build/ci`
