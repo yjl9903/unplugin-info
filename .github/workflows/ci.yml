@@ -4,9 +4,10 @@ on:
   push:
     branches:
       - main
-  pull_request:
-    branches:
-      - main
+      - fix/debug-ci-commit
+  # pull_request:
+  #   branches:
+  #     - main
 
 jobs:
   build:
@@ -21,7 +22,8 @@ jobs:
         with:
           fetch-depth: 0 # to fetch all history
           fetch-tags: true
-          ref: ${{ github.event.pull_request.head.sha }}
+          # See https://github.com/actions/checkout/issues/1359
+          ref: ${{ github.sha }}
 
       - name: Setup pnpm
         uses: pnpm/action-setup@v2.4.0
