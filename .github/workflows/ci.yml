@@ -17,9 +17,10 @@ jobs:
       id-token: write # to verify the deployment originates from an appropriate source
 
     steps:
-      - uses: actions/checkout@b4ffde65f46336ab88eb53be808477a3936bae11 # v4
+      - uses: actions/checkout@v4
         with:
           fetch-depth: 0 # to fetch all history
+          fetch-tags: true
 
       - name: Setup pnpm
         uses: pnpm/action-setup@v2.4.0
