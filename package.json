@@ -1,6 +1,6 @@
 {
   "name": "unplugin-info",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Export build information as virutal module",
   "keywords": [
     "debug",
