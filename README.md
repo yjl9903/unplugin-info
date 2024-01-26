@@ -237,6 +237,32 @@ import {
 >
 > From `unplugin-info@0.6.0`, the original virtual module called `~build/info` will be renamed to `~build/git`, and the CI/CD related information will be moved to another virtual module called `~build/ci`.
 
+You can even **custom or override the exported git information**.
+
+All the functions will be executed during the generation of `~build/git`, and the return result with its corresponding field name will be merged into `~build/git`. The following example adds another `isClean` field to `~build/git`.
+
+```ts
+// vite.config.ts
+
+import Info from 'unplugin-info/vite';
+
+export default defineConfig({
+  plugins: [
+    Info({
+      git: {
+        // Gets whether this represents a clean working branch.
+        isClean: async (git) => {
+          const status = await git.status()
+          return status.isClean()
+        }
+      }
+    })
+  ]
+});
+```
+
+Full example is located at [examples/vite](https://github.com/yjl9903/unplugin-info/blob/main/examples/vite/vite.config.ts).
+
 ### ~build/ci
 
 It exports the current CI/CD environment information, which is powered by [ci-info](https://github.com/watson/ci-info).
@@ -281,6 +307,8 @@ declare module '~build/meta' {
 }
 ```
 
+Full example is located at [examples/vite](https://github.com/yjl9903/unplugin-info/blob/main/examples/vite/vite.config.ts).
+
 ### ~build/package
 
 It exports the information of the current `package.json`.
@@ -288,6 +316,12 @@ It exports the information of the current `package.json`.
 ```ts
 import { name, version } from '~build/package';
 ```
+
+## TypeScript
+
+If you did not rename the virtual module, custom exported fields, or use `~build/meta`, you can just add `unplugin-info/client` to your `tsconfig.json` types, or add `/// <reference types="unplugin-info/client" />` to your `.d.ts` file.
+
+If you did some advanced modification, you can just copy and paste [client.d.ts](https://github.com/yjl9903/unplugin-info/blob/main/client.d.ts) to your project, and then do anything you want.
 
 ## Relationship with [vite-plugin-info](https://www.npmjs.com/package/vite-plugin-info)
 
