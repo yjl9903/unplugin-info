@@ -18,6 +18,7 @@ import { name, version } from '~build/package';
 import { isCI, name as ciName } from '~build/ci';
 
 import { format } from 'date-fns';
+
 import './playground';
 
 const buildTime = document.querySelector<HTMLElement>('.container')!;
@@ -61,19 +62,3 @@ append('Package version: ', version);
 append('', '');
 
 append('You can also open console and play around with it.', '');
-
-const printBuildInfo = () => {
-  if (process.env.NODE_ENV === 'development') {
-    return;
-  }
-  console.group('Build info');
-  console.log('Project:', name);
-  console.log('Build date:', now ? now.toLocaleString() : 'Unknown');
-  console.log('Environment:', `${process.env.NODE_ENV}${isCI ? '(ci)' : ''}`);
-  console.log('Version:', version);
-  console.log(`${name} is an open source project, you can view its source code on Github!`);
-  console.log(github);
-  console.groupEnd();
-};
-
-printBuildInfo();
