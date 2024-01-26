@@ -19,6 +19,9 @@ export const UnpluginInfo = createUnplugin<Options | undefined>((option) => {
   const info = getRepoInfo(root);
   const github = option?.github ?? getRepoUrl(info, root);
 
+  console.log('git root', root);
+  console.log('repo info', info);
+
   const ModuleName = {
     BuildTime: `${option?.prefix ?? '~build'}/time`,
     BuildGit: `${option?.prefix ?? '~build'}/git`,
