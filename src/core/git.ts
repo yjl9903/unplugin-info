@@ -11,7 +11,7 @@ export async function getRepoInfo(root: string, extra: Options['git'] = {}) {
     return undefined;
   }
 
-  const [branch, currentCommit, commiter, tags, github, result] = await Promise.all([
+  const [branch, currentCommit, committer, tags, github, result] = await Promise.all([
     getBranch(git),
     getCommit(git),
     getCommitter(git),
@@ -27,7 +27,7 @@ export async function getRepoInfo(root: string, extra: Options['git'] = {}) {
   return {
     ...branch,
     ...currentCommit,
-    ...commiter,
+    ...committer,
     ...tags,
     ...github,
     ...Object.fromEntries(result)
