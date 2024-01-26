@@ -1,3 +1,5 @@
+import '@onekuma/preset.css';
+
 import now from '~build/time';
 import {
   github,
@@ -27,6 +29,7 @@ function append(key: string, value: string | number | null) {
   const p = document.createElement('div');
   const span1 = document.createElement('span');
   span1.style.fontWeight = 'bold';
+  span1.style.userSelect = 'none';
   span1.innerText = key;
   const span2 = document.createElement('span');
   span2.innerText = value !== null ? '' + value : 'null';
@@ -42,7 +45,7 @@ buildTime.appendChild(h1);
 
 append('Build time: ', format(now, 'yyyy-MM-dd hh:mm'));
 append('CI: ', isCI ? ciName : 'Not a CI env');
-append('Github: ', github ? github : 'Not a github');
+append('GitHub: ', github ? github : 'Not a github');
 append('Branch: ', branch);
 append('SHA: ', sha);
 append('AbbreviatedSha: ', abbreviatedSha);
