@@ -317,7 +317,7 @@ It exports the information of the current `package.json`.
 import { name, version } from '~build/package';
 ```
 
-You can also **control which fields should be exported**.
+You can also **control which fields should be exported**. By default, we only export fields name, version, description, keywords, license, author from your package.json.
 
 ```ts
 // vite.config.ts
