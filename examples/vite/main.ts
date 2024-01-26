@@ -14,7 +14,8 @@ import {
   author,
   authorEmail,
   authorDate,
-  commitMessage
+  commitMessage,
+  isClean
 } from '~build/git';
 import { message } from '~build/meta';
 import { name, version } from '~build/package';
@@ -59,6 +60,7 @@ append('Author: ', author);
 append('Author Email: ', authorEmail);
 append('Author Date: ', authorDate);
 append('Commit Message: ', commitMessage);
+append('Is Clean: ', isClean ? 'true' : 'false');
 
 append('Message: ', message);
 

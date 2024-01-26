@@ -47,8 +47,10 @@ export const UnpluginInfo = createUnplugin<Options | undefined>((option) => {
       if (id === ModuleName.BuildTime) {
         return `const time = new Date(${now.getTime()})\n` + 'export default time';
       } else if (id === ModuleName.BuildInfo || id === ModuleName.BuildGit) {
-        const info = await getRepoInfo(root);
-        const github = option?.github ?? info?.github;
+        const info = await getRepoInfo(root, option?.git);
+        if (info && option?.github) {
+          info.github = option.github;
+        }
 
         if (id === ModuleName.BuildInfo) {
           this.warn(
@@ -59,28 +61,34 @@ export const UnpluginInfo = createUnplugin<Options | undefined>((option) => {
           this.warn('This may not be a git repo');
         }
 
-        const gen = (key: keyof NonNullable<typeof info>) => {
-          return `export const ${key} = ${info ? JSON.stringify(info[key]) : 'undefined'}`;
+        const keys = [
+          ...new Set([
+            'github',
+            'sha',
+            'abbreviatedSha',
+            'branch',
+            'tag',
+            'tags',
+            'lastTag',
+            'author',
+            'authorEmail',
+            'authorDate',
+            'committer',
+            'committerEmail',
+            'committerDate',
+            'commitMessage',
+            ...Object.keys(option?.git ?? {})
+          ])
+        ];
+        const gen = (key: string) => {
+          return `export const ${key} = ${info ? JSON.stringify((info as any)[key]) : 'null'}`;
         };
 
         return [
           id === ModuleName.BuildInfo
             ? `export const CI = ${ci.isCI ? `"${ci.name}"` : 'null'}`
             : ``,
-          `export const github = ${JSON.stringify(github ?? null)}`,
-          gen('sha'),
-          gen('abbreviatedSha'),
-          gen('branch'),
-          gen('tag'),
-          gen('tags'),
-          gen('lastTag'),
-          gen('author'),
-          gen('authorEmail'),
-          gen('authorDate'),
-          gen('committer'),
-          gen('committerEmail'),
-          gen('committerDate'),
-          gen('commitMessage')
+          ...keys.map((key) => gen(key))
         ].join('\n');
       } else if (id === ModuleName.BuildCI) {
         return [

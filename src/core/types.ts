@@ -1,3 +1,5 @@
+import type { SimpleGit } from 'simple-git';
+
 export interface Options {
   /**
    * Git repo root path
@@ -8,6 +10,11 @@ export interface Options {
    * Github repo url
    */
   github?: string;
+
+  /**
+   * Custom the exported fields in ~build/git
+   */
+  git?: Record<string, (git: SimpleGit) => Promise<any> | any>;
 
   /**
    * Custom virtual module prefix

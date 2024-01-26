@@ -2,19 +2,26 @@ import { type SimpleGit, simpleGit } from 'simple-git';
 
 import parseGitUrl from 'git-url-parse';
 
-export async function getRepoInfo(root: string) {
+import type { Options } from './types';
+
+export async function getRepoInfo(root: string, extra: Options['git'] = {}) {
   const git = simpleGit(root);
 
   if (!(await git.checkIsRepo())) {
     return undefined;
   }
 
-  const [branch, currentCommit, commiter, tags, github] = await Promise.all([
+  const [branch, currentCommit, commiter, tags, github, result] = await Promise.all([
     getBranch(git),
     getCommit(git),
     getCommitter(git),
     getTags(git),
-    getGitHubUrl(git)
+    getGitHubUrl(git),
+    Promise.all(
+      Object.entries(extra).map(async ([key, fn]) => {
+        return [key, await fn(git)] as const;
+      })
+    )
   ] as const);
 
   return {
@@ -22,7 +29,8 @@ export async function getRepoInfo(root: string) {
     ...currentCommit,
     ...commiter,
     ...tags,
-    ...github
+    ...github,
+    ...Object.fromEntries(result)
   };
 }
 
