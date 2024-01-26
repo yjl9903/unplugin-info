@@ -20,8 +20,8 @@ declare module '~build/git' {
   /** The tag for the current SHA (or `null` if no tag exists) */
   export const tag: string | null;
 
-  /** The tags for the current SHA*/
-  export const tags: string[];
+  /** The tags for the current SHA */
+  export const tags: string[] | null;
 
   /** Tag for the closest tagged ancestor (or `null` if no ancestor is tagged) */
   export const lastTag: string | null;
