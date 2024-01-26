@@ -1,6 +1,6 @@
 {
   "name": "unplugin-info-vite-demo",
-  "version": "1.0.0-beta.1",
+  "version": "1.0.0",
   "private": "true",
   "type": "module",
   "scripts": {
