@@ -286,6 +286,19 @@ export default defineConfig({
 })
 ```
 
+You can also generate meta data lazily.
+
+```ts
+// vite.config.ts
+export default defineConfig({
+  plugins: [
+    BuildInfo({
+      meta: async () => ({ message: 'This is set from vite.config.ts' })
+    })
+  ]
+})
+```
+
 Then you can import them in your Vite app.
 
 ```ts

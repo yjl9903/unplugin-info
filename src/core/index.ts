@@ -97,7 +97,14 @@ export const UnpluginInfo = createUnplugin<Options | undefined>((option) => {
           `export const name = ${ci.name !== null ? `\`${ci.name}\`` : 'null'}`
         ].join('\n');
       } else if (id === ModuleName.BuildMeta) {
-        const body = Object.entries(option?.meta ?? {}).map(
+        const get = () => {
+          if (!option?.meta) return {};
+          if (typeof option.meta === 'function') {
+            return option.meta();
+          }
+          return option.meta;
+        };
+        const body = Object.entries(await get()).map(
           ([key, value]) => `export const ${key} = ${JSON.stringify(value, null, 2)};`
         );
         return body.join('\n');

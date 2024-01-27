@@ -1,5 +1,7 @@
 import type { SimpleGit } from 'simple-git';
 
+type Metadata = Record<string | number, any>;
+
 export interface Options {
   /**
    * Git repo root path
@@ -26,7 +28,7 @@ export interface Options {
    *
    * Notice: meta data will be serialized to JSON format
    */
-  meta?: Record<string | number | symbol, any>;
+  meta?: Metadata | (() => Metadata | Promise<Metadata>);
 
   /**
    * Custom virtual module prefix
