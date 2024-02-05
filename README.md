@@ -172,6 +172,32 @@ export default defineConfig({
 
 <br></details>
 
+### TypeScript
+
+To make the TypeScript work, you can add `unplugin-info/types` to your corresponding `tsconfig.json`.
+
+```json5
+{
+  "compilerOptions": {
+    // ...
+    "types": [
+      "unplugin-info/client"
+    ],
+  },
+  // ...
+}
+```
+
+Or you can add TypeScript [triple-slash directives](https://www.typescriptlang.org/docs/handbook/triple-slash-directives.html) to your `.d.ts` (i.e. for projects initialized by Vite, it may be `src/env.d.ts`).
+
+```ts
+// Your .d.ts file
+
+/// <reference types="unplugin-info/client" />
+```
+
+Or if you did some advanced modification (see below), you can just copy and paste [client.d.ts](https://github.com/yjl9903/unplugin-info/blob/main/client.d.ts) to your project, and then do anything you want.
+
 ## Usage
 
 `unplugin-info` creates several virtual modules, `~build/time`, `~build/git`, `~build/ci`, `~build/package`, and `~build/meta`.
@@ -349,12 +375,6 @@ export default defineConfig({
 ```
 
 Full example is located at [examples/vite](https://github.com/yjl9903/unplugin-info/blob/main/examples/vite/vite.config.ts).
-
-## TypeScript
-
-If you did not rename the virtual module, custom exported fields, or use `~build/meta`, you can just add `unplugin-info/client` to your `tsconfig.json` types, or add `/// <reference types="unplugin-info/client" />` to your `.d.ts` file.
-
-If you did some advanced modification, you can just copy and paste [client.d.ts](https://github.com/yjl9903/unplugin-info/blob/main/client.d.ts) to your project, and then do anything you want.
 
 ## Relationship with [vite-plugin-info](https://www.npmjs.com/package/vite-plugin-info)
 
