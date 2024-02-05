@@ -76,7 +76,7 @@ importers:
         specifier: ^1.2.2
         version: 1.2.2(@types/node@20.11.16)
       webpack:
-        specifier: ^5.90.0
+        specifier: ^5.90.1
         version: 5.90.1(esbuild@0.20.0)(webpack-cli@5.1.4)
 
   examples/vite:
