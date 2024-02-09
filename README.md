@@ -79,7 +79,10 @@ module.exports = {
 // nuxt.config.ts
 
 export default defineNuxtConfig({
-  modules: ['unplugin-info/nuxt']
+  modules: ['unplugin-info/nuxt'],
+  info: {
+    // Your unplugin-info options ...
+  }
 });
 ```
 
