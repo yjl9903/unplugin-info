@@ -81,6 +81,9 @@ importers:
 
   examples/nuxt:
     devDependencies:
+      '@nuxt/schema':
+        specifier: ^3.10.1
+        version: 3.10.1(rollup@4.9.6)
       nuxt:
         specifier: ^3.8.1
         version: 3.10.1(@types/node@20.11.17)(rollup@4.9.6)(typescript@5.3.3)(vite@5.1.0)

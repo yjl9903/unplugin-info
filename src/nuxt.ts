@@ -1,4 +1,5 @@
-import { NuxtModule } from '@nuxt/schema';
+import type { NuxtModule } from '@nuxt/schema';
+
 import { defineNuxtModule } from '@nuxt/kit';
 
 import type { Options } from './core/types';
@@ -37,3 +38,13 @@ const nuxtModule = defineNuxtModule<Options>({
 }) as NuxtModule<Options>;
 
 export default nuxtModule;
+
+declare module '@nuxt/schema' {
+  interface NuxtConfig {
+    info?: Options;
+  }
+
+  interface NuxtOptions {
+    info?: Options;
+  }
+}

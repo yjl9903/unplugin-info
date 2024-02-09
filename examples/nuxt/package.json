@@ -10,6 +10,7 @@
     "start": "nuxi preview"
   },
   "devDependencies": {
+    "@nuxt/schema": "^3.10.1",
     "nuxt": "^3.8.1",
     "unplugin-info": "workspace:*"
   }
