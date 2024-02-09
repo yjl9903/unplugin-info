@@ -1,10 +1,11 @@
+import type { NuxtModule } from '@nuxt/schema';
 import { defineNuxtModule } from '@nuxt/kit';
 
 import type { Options } from './core/types';
 
 import { UnpluginInfo } from './core';
 
-export default defineNuxtModule({
+const nuxtModule: NuxtModule<Options> = defineNuxtModule({
   meta: {
     // Usually the npm package name of your module
     name: 'unplugin-info/nuxt',
@@ -34,3 +35,5 @@ export default defineNuxtModule({
     });
   }
 });
+
+export default nuxtModule;
