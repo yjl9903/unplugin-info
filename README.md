@@ -37,6 +37,8 @@ export default defineConfig({
 });
 ```
 
+Full example is located at [examples/vite](https://github.com/yjl9903/unplugin-info/blob/main/examples/vite).
+
 <br></details>
 
 <details>
@@ -70,6 +72,8 @@ module.exports = {
 };
 ```
 
+Full example is located at [examples/webpack](https://github.com/yjl9903/unplugin-info/blob/main/examples/webpack).
+
 <br></details>
 
 <details>
@@ -85,6 +89,8 @@ export default defineNuxtConfig({
   }
 });
 ```
+
+Full example is located at [examples/nuxt](https://github.com/yjl9903/unplugin-info/blob/main/examples/nuxt).
 
 <br></details>
 
