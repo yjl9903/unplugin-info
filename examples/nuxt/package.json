@@ -1,0 +1,17 @@
+{
+  "name": "unplugin-info-nuxt-demo",
+  "version": "1.0.3",
+  "private": "true",
+  "type": "module",
+  "scripts": {
+    "build": "nuxi build",
+    "dev": "nuxi dev",
+    "generate": "nuxi generate",
+    "postinstall": "nuxi generate",
+    "start": "nuxi preview"
+  },
+  "devDependencies": {
+    "nuxt": "^3.8.1",
+    "unplugin-info": "workspace:*"
+  }
+}
