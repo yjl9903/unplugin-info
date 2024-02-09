@@ -1,11 +1,11 @@
-import type { NuxtModule } from '@nuxt/schema';
+import { NuxtModule } from '@nuxt/schema';
 import { defineNuxtModule } from '@nuxt/kit';
 
 import type { Options } from './core/types';
 
 import { UnpluginInfo } from './core';
 
-const nuxtModule: NuxtModule<Options> = defineNuxtModule({
+const nuxtModule = defineNuxtModule<Options>({
   meta: {
     // Usually the npm package name of your module
     name: 'unplugin-info/nuxt',
@@ -34,6 +34,6 @@ const nuxtModule: NuxtModule<Options> = defineNuxtModule({
       config.plugins.push(UnpluginInfo.vite(options));
     });
   }
-});
+}) as NuxtModule<Options>;
 
 export default nuxtModule;
