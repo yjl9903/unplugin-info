@@ -7,7 +7,7 @@
     "build": "nuxi build",
     "dev": "nuxi dev",
     "generate": "nuxi generate",
-    "prepare": "nuxi prepare",
+    "postinstall": "nuxi prepare",
     "start": "nuxi preview"
   },
   "devDependencies": {
