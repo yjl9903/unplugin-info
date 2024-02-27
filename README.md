@@ -183,7 +183,7 @@ export default defineConfig({
 
 ### TypeScript
 
-To make the TypeScript work, you can add `unplugin-info/types` to your corresponding `tsconfig.json`.
+To make the TypeScript work, you can add `unplugin-info/client` to your corresponding `tsconfig.json`.
 
 ```json5
 {
