@@ -43,8 +43,8 @@ importers:
         specifier: ^2.0.4
         version: 2.0.4
       bumpp:
-        specifier: ^9.3.0
-        version: 9.3.0
+        specifier: ^9.3.1
+        version: 9.3.1
       chalk:
         specifier: ^5.3.0
         version: 5.3.0
@@ -2913,8 +2913,8 @@ packages:
       semver: 7.6.0
     dev: true
 
-  /bumpp@9.3.0:
-    resolution: {integrity: sha512-P46VikoEZadYCqx7mbClKlaJnOyvc+JfRJPRf1YwlOjwqeYmutgFe1w9hvfXe819VhpU0N0TNXtxyVAUlAgaNA==}
+  /bumpp@9.3.1:
+    resolution: {integrity: sha512-GQsf2Kwsvoxu8RL4euMvUwN3baZsIuigCPF+iGNQEa19+62MqYcpzxyjbspJT9qCipecpWKcEy6lC5kVoTs1Kw==}
     engines: {node: '>=10'}
     hasBin: true
     dependencies:
