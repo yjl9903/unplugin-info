@@ -99,7 +99,7 @@
   "dependencies": {
     "ci-info": "^4.0.0",
     "git-url-parse": "^14.0.0",
-    "simple-git": "^3.24.0",
+    "simple-git": "^3.25.0",
     "unplugin": "^1.10.1"
   },
   "devDependencies": {
