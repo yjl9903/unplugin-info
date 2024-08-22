@@ -98,7 +98,7 @@
   },
   "dependencies": {
     "ci-info": "^4.0.0",
-    "git-url-parse": "^14.1.0",
+    "git-url-parse": "^15.0.0",
     "simple-git": "^3.25.0",
     "unplugin": "^1.12.2"
   },
