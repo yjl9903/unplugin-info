@@ -209,7 +209,7 @@ Or if you did some advanced modification (see below), you can just copy and past
 
 ## Usage
 
-`unplugin-info` creates several virtual modules, `~build/time`, `~build/git`, `~build/ci`, `~build/meta`, `~build/env`, and `~build/package`.
+`unplugin-info` creates several virtual modules, `~build/time`, `~build/git`, `~build/ci`, `~build/console`, `~build/meta`, `~build/env`, and `~build/package`.
 
 You can just import these modules as usual, and do anything with them. Common use cases may be like:
 
@@ -304,6 +304,14 @@ It exports the current CI/CD environment information, which is powered by [ci-in
 
 ```ts
 import { isCI, isPR, name } from '~build/ci'
+```
+
+## ~build/console
+
+It will print some helpful logs in your browser.
+
+```ts
+import '~build/console';
 ```
 
 ### ~build/meta
