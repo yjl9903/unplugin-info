@@ -14,9 +14,12 @@ export class BuildMetaModule extends BuildInfoModule {
       }
       return options.meta;
     };
-    const body = Object.entries(await get()).map(
+
+    const meta = await get();
+    const body = Object.entries(meta).map(
       ([key, value]) => `export const ${key} = ${JSON.stringify(value, null, 2)};`
     );
-    return body.join('\n');
+
+    return body.length > 0 ? body.join('\n') : 'export {};';
   }
 }

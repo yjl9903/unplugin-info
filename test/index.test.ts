@@ -1,4 +1,4 @@
-import { describe, expect, it } from 'vitest';
+import { beforeAll, describe, expect, it } from 'vitest';
 
 import '../client.d';
 
@@ -11,6 +11,7 @@ describe('build timestamp', () => {
 
 describe('build info', () => {
   it('should work', async () => {
+    // @ts-ignore
     const { github } = await import('~build/info');
     expect(github).toMatchInlineSnapshot('"https://github.com/yjl9903/unplugin-info"');
   });
@@ -34,5 +35,20 @@ describe('build meta', () => {
     // @ts-ignore
     const { message } = await import('~build/meta');
     expect(message).toMatchInlineSnapshot('"This is set from vite.config.ts"');
+  });
+});
+
+describe('build env', () => {
+  const MESSAGE = 'This is set from the vitest';
+
+  beforeAll(() => {
+    // @ts-ignore
+    process.env.BUILD_MESSAGE = MESSAGE;
+  });
+
+  it('should work', async () => {
+    // @ts-ignore
+    const { BUILD_MESSAGE: message } = await import('~build/env');
+    expect(message).toStrictEqual(MESSAGE);
   });
 });

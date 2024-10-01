@@ -3,6 +3,9 @@ export default defineNuxtConfig({
   info: {
     meta: {
       message: 'This is from nuxt.config.ts'
+    },
+    env: {
+      BUILD_MESSAGE: 'invalid'
     }
   }
 });

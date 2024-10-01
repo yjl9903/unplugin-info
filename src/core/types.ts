@@ -1,8 +1,6 @@
 import type { SimpleGit } from 'simple-git';
 import type { UnpluginBuildContext, UnpluginContext, TransformResult } from 'unplugin';
 
-type Metadata = Record<string | number, any>;
-
 export abstract class BuildInfoModule {
   name: string;
 
@@ -25,6 +23,10 @@ export abstract class BuildInfoModule {
     id: string
   ): TransformResult | Promise<TransformResult>;
 }
+
+type Metadata = Record<string | number, any>;
+
+type Env = Record<string | number, any>;
 
 export interface Options {
   /**
@@ -53,6 +55,15 @@ export interface Options {
    * Notice: meta data will be serialized to JSON format
    */
   meta?: Metadata | (() => Metadata | Promise<Metadata>);
+
+  /**
+   * Pass environment variables to Vite SSR app
+   *
+   * For each key / value record
+   * - In the SSR environment, it will read the environment variable (e.g. process.env.<key>)
+   * - In the client environment, it will return the provided default value
+   */
+  env?: Metadata | (() => Env | Promise<Env>);
 
   /**
    * Custom virtual module prefix
