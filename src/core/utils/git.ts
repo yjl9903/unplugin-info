@@ -2,7 +2,7 @@ import { type SimpleGit, simpleGit } from 'simple-git';
 
 import parseGitUrl from 'git-url-parse';
 
-import type { Options } from './types';
+import type { Options } from '../types';
 
 export async function getRepoInfo(root: string, extra: Options['git'] = {}) {
   const git = simpleGit(root);
