@@ -93,6 +93,7 @@
     "format": "prettier --write examples src",
     "release": "bumpp package.json examples/*/package.json --commit --push --tag && pnpm publish",
     "test": "vitest",
+    "test:ci": "vitest --run",
     "typecheck": "tsc --noEmit",
     "preversion": "pnpm typecheck && pnpm build"
   },

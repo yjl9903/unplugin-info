@@ -15,8 +15,6 @@ import { BuildPackageModule } from './modules/package';
 export * from './types';
 
 export const UnpluginInfo = createUnplugin<Options | undefined>((options = {}) => {
-  let now: Date;
-
   const root = path.resolve(options?.root ?? process.cwd());
 
   const modules = {
@@ -30,8 +28,11 @@ export const UnpluginInfo = createUnplugin<Options | undefined>((options = {}) =
 
   return {
     name: 'unplugin-info',
-    buildStart() {
-      now = new Date();
+    async buildStart() {
+      await Promise.all(Object.values(modules).map((mod) => mod.buildStart(this)));
+    },
+    async buildEnd() {
+      await Promise.all(Object.values(modules).map((mod) => mod.buildEnd(this)));
     },
     resolveId(id) {
       if (
@@ -69,7 +70,7 @@ export const UnpluginInfo = createUnplugin<Options | undefined>((options = {}) =
       handleHotUpdate({ file, server }) {
         // HMR: package.json
         if (file === normalizePath(path.resolve(root, 'package.json'))) {
-          const module = server.moduleGraph.getModuleById('\0' + modules.Package);
+          const module = server.moduleGraph.getModuleById('\0' + modules.Package.name);
           if (module) {
             // Invalidate module for reloading
             server.moduleGraph.invalidateModule(module);
