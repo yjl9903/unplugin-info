@@ -209,7 +209,7 @@ Or if you did some advanced modification (see below), you can just copy and past
 
 ## Usage
 
-`unplugin-info` creates several virtual modules, `~build/time`, `~build/git`, `~build/ci`, `~build/package`, and `~build/meta`.
+`unplugin-info` creates several virtual modules, `~build/time`, `~build/git`, `~build/ci`, `~build/meta`, `~build/env`, and `~build/package`.
 
 You can just import these modules as usual, and do anything with them. Common use cases may be like:
 
@@ -334,7 +334,7 @@ export default defineConfig({
 })
 ```
 
-Then you can import them in your Vite app.
+Then you can import them in your app.
 
 ```ts
 import { message } from '~build/meta'
@@ -356,6 +356,47 @@ declare module '~build/meta' {
 ```
 
 Full example is located at [examples/vite](https://github.com/yjl9903/unplugin-info/blob/main/examples/vite/vite.config.ts).
+
+### ~build/env
+
+> **Note**
+>
+> Now it only suports for Vite.
+
+It exports some environment data from the options of the plugin.
+
+```ts
+// vite.config.ts
+export default defineConfig({
+  plugins: [
+    BuildInfo({
+      env: { BUILD_MESSAGE: 'This is a default value set from vite.config.ts' }
+    })
+  ]
+})
+```
+
+Compared with `~build/meta`, `~build/env` is targeted at accessing environment variables for the SSR runtime (like Nuxt, Remix, Astro, and so on).
+
+Then you can import them in your Vite app.
+
+```ts
+import { BUILD_MESSAGE } from '~build/env'
+
+console.log(BUILD_MESSAGE)
+```
+
+In the client-side, this will always output `This is a default value set from vite.config.ts`.
+
+But in the server-side, the output log is determined by the corresponding environment variable `process.env.BUILD_MESSAGE`.
+
+To get TypeScript support, you can add type declaration in your `env.d.ts` (It is include in the [official Vite project template](https://vitejs.dev/guide/#scaffolding-your-first-vite-project)).
+
+```ts
+declare module '~build/env' {
+  export const BUILD_MESSAGE: string;
+}
+```
 
 ### ~build/package
 
