@@ -351,7 +351,7 @@ console.log(message)
 // This is set from vite.config.ts
 ```
 
-> **Note**
+> **Notice**
 >
 > Meta data will be serialized to JSON format, so you should gen it in you `vite.config.ts` and pass the result object.
 
@@ -367,7 +367,7 @@ Full example is located at [examples/vite](https://github.com/yjl9903/unplugin-i
 
 ### ~build/env
 
-> **Note**
+> **Notice**
 >
 > Now it only suports for Vite.
 
