@@ -1,4 +1,5 @@
 <script setup lang="ts">
+import '~build/console';
 import { message } from '~build/meta';
 import { BUILD_MESSAGE } from '~build/env';
 

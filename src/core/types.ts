@@ -65,6 +65,15 @@ export interface Options {
    */
   env?: Metadata | (() => Env | Promise<Env>);
 
+  console?: {
+    /**
+     * Enable build info log under these NODE_ENV
+     *
+     * @default ['development','production']
+     */
+    environment?: string[];
+  };
+
   /**
    * Custom virtual module prefix
    *

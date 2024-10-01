@@ -1,5 +1,6 @@
 import '@onekuma/preset.css';
 
+import '~build/console';
 import now from '~build/time';
 import {
   github,

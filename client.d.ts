@@ -71,7 +71,16 @@ declare module '~build/ci' {
   export const name: string | null;
 }
 
+declare module '~build/console' {
+  /**
+   * Print build info
+   */
+  export const print: () => void;
+}
+
 declare module '~build/meta' {}
+
+declare module '~build/env' {}
 
 declare module '~build/package' {
   /** Package name */
