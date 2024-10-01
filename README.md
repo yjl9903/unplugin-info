@@ -306,7 +306,7 @@ It exports the current CI/CD environment information, which is powered by [ci-in
 import { isCI, isPR, name } from '~build/ci'
 ```
 
-## ~build/console
+### ~build/console
 
 It will print some helpful logs in your browser.
 
