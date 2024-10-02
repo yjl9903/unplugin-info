@@ -65,6 +65,9 @@ export interface Options {
    */
   env?: Metadata | (() => Env | Promise<Env>);
 
+  /**
+   * Print help build information
+   */
   console?: {
     /**
      * Enable build info log under these NODE_ENV
@@ -80,4 +83,9 @@ export interface Options {
    * @default '~build'
    */
   prefix?: string;
+
+  /**
+   * Whether it is bundled for cloudflare worker runtime
+   */
+  cloudflare?: boolean;
 }

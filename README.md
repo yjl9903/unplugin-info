@@ -268,7 +268,7 @@ import {
 // ...
 ```
 
-> **Notice**
+> [!NOTE]
 >
 > From `unplugin-info@0.6.0`, the original virtual module called `~build/info` will be renamed to `~build/git`, and the CI/CD related information will be moved to another virtual module called `~build/ci`.
 

@@ -15,10 +15,12 @@ export class BuildEnvModule extends BuildInfoModule {
       return options.env;
     };
 
+    const cloudflare = options.cloudflare === true;
     const meta = await get();
-    const body = Object.entries(meta).map(
-      ([key, value]) =>
-        `export const ${key} = (import.meta.env.SSR ? process?.env?.['${key.replace(/'/g, '\\')}'] : undefined) ?? ${JSON.stringify(value, null, 2)};`
+    const body = Object.entries(meta).map(([key, value]) =>
+      !cloudflare
+        ? `export const ${key} = (import.meta.env.SSR ? process?.env?.['${key.replace(/'/g, '\\')}'] : undefined) ?? ${JSON.stringify(value, null, 2)};`
+        : `export const ${key} = ${JSON.stringify(value, null, 2)};`
     );
 
     return body.length > 0 ? body.join('\n') : 'export {};';
