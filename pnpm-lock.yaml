@@ -7757,7 +7757,7 @@ snapshots:
       citty: 0.1.6
       clipboardy: 4.0.0
       consola: 3.2.3
-      crossws: 0.3.1
+      crossws: 0.2.4
       defu: 6.1.4
       get-port-please: 3.1.2
       h3: 1.13.0
@@ -7770,6 +7770,8 @@ snapshots:
       ufo: 1.5.4
       untun: 0.1.3
       uqr: 0.1.2
+    transitivePeerDependencies:
+      - uWebSockets.js
 
   loader-runner@4.3.0: {}
 
@@ -9249,6 +9251,8 @@ snapshots:
       ufo: 1.5.4
     optionalDependencies:
       ioredis: 5.4.1
+    transitivePeerDependencies:
+      - uWebSockets.js
 
   untun@0.1.3:
     dependencies:
