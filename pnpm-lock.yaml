@@ -76,7 +76,7 @@ importers:
         specifier: ^2.1.4
         version: 2.1.4(@types/node@22.8.7)(terser@5.36.0)
       webpack:
-        specifier: ^5.95.0
+        specifier: ^5.96.1
         version: 5.96.1(esbuild@0.24.0)
 
   examples/nuxt:
