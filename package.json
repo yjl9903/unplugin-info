@@ -110,7 +110,7 @@
     "@types/node": "^22.10.1",
     "@types/parse-github-url": "^1.0.3",
     "@types/remote-origin-url": "^2.0.4",
-    "bumpp": "^9.8.1",
+    "bumpp": "^9.9.0",
     "chalk": "^5.3.0",
     "date-fns": "^4.1.0",
     "fast-glob": "^3.3.2",
