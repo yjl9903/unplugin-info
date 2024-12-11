@@ -98,7 +98,7 @@
     "preversion": "pnpm typecheck && pnpm build"
   },
   "dependencies": {
-    "ci-info": "^4.0.0",
+    "ci-info": "^4.1.0",
     "git-url-parse": "^16.0.0",
     "simple-git": "^3.27.0",
     "unplugin": "^1.16.0"
