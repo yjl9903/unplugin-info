@@ -67,8 +67,8 @@ importers:
         specifier: ^5.7.2
         version: 5.7.2
       unbuild:
-        specifier: ^3.0.0
-        version: 3.0.0(typescript@5.7.2)(vue@3.5.12(typescript@5.7.2))
+        specifier: ^3.0.1
+        version: 3.0.1(typescript@5.7.2)(vue@3.5.12(typescript@5.7.2))
       vite:
         specifier: ^6.0.3
         version: 6.0.3(@types/node@22.10.2)(jiti@2.4.1)(terser@5.36.0)(tsx@4.19.2)(yaml@2.6.0)
@@ -4116,8 +4116,8 @@ packages:
   ultrahtml@1.5.3:
     resolution: {integrity: sha512-GykOvZwgDWZlTQMtp5jrD4BVL+gNn2NVlVafjcFUJ7taY20tqYdwdoWBFy6GBJsNTZe1GkGPkSl5knQAjtgceg==}
 
-  unbuild@3.0.0:
-    resolution: {integrity: sha512-yl9heYNwhy7GjUZEIiHFQrLJIIfMgoAWEKq+JfVEKHnLOtQjvsUj7T59OANOxkWD81epV3JH4lg4RO+BQ/NGDA==}
+  unbuild@3.0.1:
+    resolution: {integrity: sha512-03Fv1B8hmJzYCdL4TDgmgBg1WMU0CB5P2tBqPCW7XAvZG/l275m6JU/xf2tJ4yuUeHtmSzg1G387Te9nlsufFA==}
     hasBin: true
     peerDependencies:
       typescript: ^5.7.2
@@ -7661,7 +7661,7 @@ snapshots:
       get-port-please: 3.1.2
       h3: 1.13.0
       http-shutdown: 1.2.2
-      jiti: 2.4.0
+      jiti: 2.4.1
       mlly: 1.7.3
       node-forge: 1.3.1
       pathe: 1.1.2
@@ -9230,7 +9230,7 @@ snapshots:
 
   ultrahtml@1.5.3: {}
 
-  unbuild@3.0.0(typescript@5.7.2)(vue@3.5.12(typescript@5.7.2)):
+  unbuild@3.0.1(typescript@5.7.2)(vue@3.5.12(typescript@5.7.2)):
     dependencies:
       '@rollup/plugin-alias': 5.1.1(rollup@4.28.1)
       '@rollup/plugin-commonjs': 28.0.1(rollup@4.28.1)
