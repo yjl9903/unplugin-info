@@ -104,8 +104,8 @@
     "unplugin": "^2.1.2"
   },
   "devDependencies": {
-    "@nuxt/kit": "^3.15.0",
-    "@nuxt/schema": "^3.15.0",
+    "@nuxt/kit": "^3.15.1",
+    "@nuxt/schema": "^3.15.1",
     "@types/git-url-parse": "^9.0.3",
     "@types/node": "^22.10.5",
     "@types/parse-github-url": "^1.0.3",
