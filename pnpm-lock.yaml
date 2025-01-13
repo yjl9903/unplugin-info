@@ -67,8 +67,8 @@ importers:
         specifier: ^5.7.3
         version: 5.7.3
       unbuild:
-        specifier: ^3.3.0
-        version: 3.3.0(typescript@5.7.3)(vue@3.5.13(typescript@5.7.3))
+        specifier: ^3.3.1
+        version: 3.3.1(typescript@5.7.3)(vue@3.5.13(typescript@5.7.3))
       vite:
         specifier: ^6.0.7
         version: 6.0.7(@types/node@22.10.5)(jiti@2.4.2)(terser@5.37.0)(tsx@4.19.2)(yaml@2.7.0)
@@ -3986,11 +3986,11 @@ packages:
   ultrahtml@1.5.3:
     resolution: {integrity: sha512-GykOvZwgDWZlTQMtp5jrD4BVL+gNn2NVlVafjcFUJ7taY20tqYdwdoWBFy6GBJsNTZe1GkGPkSl5knQAjtgceg==}
 
-  unbuild@3.3.0:
-    resolution: {integrity: sha512-DRBK6KpMo4A2gAkQglItfLWbjJtiBfNfS87UCLf0yoDsxUUwU4AgQJru0dGoX0vW8bfMaBynvWgTUtzr4CJcbQ==}
+  unbuild@3.3.1:
+    resolution: {integrity: sha512-/5OeeHmW1JlWEyQw3SPkB9BV16lzr6C5i8D+O17NLx6ETgvCZ3ZlyXfWkVVfG2YCsv8xAVQCqJNJtbEAGwHg7A==}
     hasBin: true
     peerDependencies:
-      typescript: ^5.7.2
+      typescript: ^5.7.3
     peerDependenciesMeta:
       typescript:
         optional: true
@@ -8685,7 +8685,7 @@ snapshots:
 
   ultrahtml@1.5.3: {}
 
-  unbuild@3.3.0(typescript@5.7.3)(vue@3.5.13(typescript@5.7.3)):
+  unbuild@3.3.1(typescript@5.7.3)(vue@3.5.13(typescript@5.7.3)):
     dependencies:
       '@rollup/plugin-alias': 5.1.1(rollup@4.30.1)
       '@rollup/plugin-commonjs': 28.0.2(rollup@4.30.1)
