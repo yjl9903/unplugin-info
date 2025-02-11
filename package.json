@@ -151,5 +151,5 @@
       "optional": true
     }
   },
-  "packageManager": "pnpm@10.2.1"
+  "packageManager": "pnpm@10.3.0"
 }
