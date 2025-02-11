@@ -43,8 +43,8 @@ importers:
         specifier: ^2.0.4
         version: 2.0.4
       bumpp:
-        specifier: ^10.0.2
-        version: 10.0.2(magicast@0.3.5)
+        specifier: ^10.0.3
+        version: 10.0.3(magicast@0.3.5)
       chalk:
         specifier: ^5.4.1
         version: 5.4.1
@@ -1795,8 +1795,8 @@ packages:
   buffer@6.0.3:
     resolution: {integrity: sha512-FTiCpNxtwiZZHEZbcbTIcZjERVICn9yq/pDFkTl95/AxzD1naBctN7YO68riM/gLSDY7sdrMby8hofADYuuqOA==}
 
-  bumpp@10.0.2:
-    resolution: {integrity: sha512-17ztVdFfdoSStJyauUjhi+fWJ9wWmMloOhqwimLHnM3Pfd5+o/BJFwy3TDcK11bMVP5phari5/C4FxFgxXZHhw==}
+  bumpp@10.0.3:
+    resolution: {integrity: sha512-5ONBZenNf9yfTIl2vFvDEfeeioidt0fG10SzjHQw50BRxOmXzsdY+lab1+SDMfiW6UyJ1xQqzFymcy5wa8YhTA==}
     engines: {node: '>=18'}
     hasBin: true
 
@@ -6365,7 +6365,7 @@ snapshots:
       base64-js: 1.5.1
       ieee754: 1.2.1
 
-  bumpp@10.0.2(magicast@0.3.5):
+  bumpp@10.0.3(magicast@0.3.5):
     dependencies:
       args-tokenizer: 0.3.0
       c12: 2.0.1(magicast@0.3.5)
