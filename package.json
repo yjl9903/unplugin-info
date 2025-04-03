@@ -106,7 +106,7 @@
   "devDependencies": {
     "@nuxt/kit": "^3.16.2",
     "@nuxt/schema": "^3.16.2",
-    "@types/git-url-parse": "^9.0.3",
+    "@types/git-url-parse": "^16.0.0",
     "@types/node": "^22.14.0",
     "@types/parse-github-url": "^1.0.3",
     "@types/remote-origin-url": "^2.0.4",
