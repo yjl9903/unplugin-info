@@ -10,7 +10,7 @@ export class BuildTimeModule extends BuildInfoModule {
   }
 
   buildStart() {
-    this.now = new Date();
+    this.now = this.options.time ? this.options.time : new Date();
   }
 
   load() {

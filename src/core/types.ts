@@ -4,6 +4,8 @@ type Metadata = Record<string | number, any>;
 
 type Env = Record<string | number, any>;
 
+type ConsoleField = string;
+
 export interface Options {
   /**
    * Git repo root path
@@ -14,6 +16,11 @@ export interface Options {
    * Github repo url
    */
   github?: string;
+
+  /**
+   * Sepcify build time manually
+   */
+  time?: Date;
 
   /**
    * Custom the exported fields in ~build/git
@@ -51,6 +58,8 @@ export interface Options {
      * @default ['development','production']
      */
     environment?: string[];
+
+    fields?: ConsoleField[] | Record<string, ConsoleField>;
   };
 
   /**
