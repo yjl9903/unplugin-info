@@ -1,6 +1,8 @@
 import ci from 'ci-info';
 
-import { type Options, BuildInfoModule } from '../types';
+import type { Options } from '../types';
+
+import { BuildInfoModule } from './base';
 
 export class BuildCIModule extends BuildInfoModule {
   constructor(root: string, options: Options) {

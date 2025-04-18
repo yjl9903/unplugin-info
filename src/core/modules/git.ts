@@ -2,8 +2,11 @@ import type { UnpluginBuildContext, UnpluginContext } from 'unplugin';
 
 import ci from 'ci-info';
 
+import type { Options } from '../types';
+
 import { getRepoInfo } from '../utils/git';
-import { type Options, BuildInfoModule } from '../types';
+
+import { BuildInfoModule } from './base';
 
 export class BuildGitModule extends BuildInfoModule {
   constructor(root: string, options: Options) {

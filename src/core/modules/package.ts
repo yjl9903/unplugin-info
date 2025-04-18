@@ -1,7 +1,9 @@
 import fs from 'node:fs';
 import path from 'node:path';
 
-import { type Options, BuildInfoModule } from '../types';
+import type { Options } from '../types';
+
+import { BuildInfoModule } from './base';
 
 export class BuildPackageModule extends BuildInfoModule {
   constructor(root: string, options: Options) {

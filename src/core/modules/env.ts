@@ -1,4 +1,6 @@
-import { type Options, BuildInfoModule } from '../types';
+import type { Options } from '../types';
+
+import { BuildInfoModule } from './base';
 
 export class BuildEnvModule extends BuildInfoModule {
   constructor(root: string, options: Options) {
