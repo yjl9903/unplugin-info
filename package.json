@@ -107,7 +107,7 @@
     "@nuxt/kit": "^3.17.2",
     "@nuxt/schema": "^3.17.2",
     "@types/git-url-parse": "^16.0.2",
-    "@types/node": "^22.15.15",
+    "@types/node": "^22.15.16",
     "@types/parse-github-url": "^1.0.3",
     "@types/remote-origin-url": "^2.0.4",
     "bumpp": "^10.1.0",
