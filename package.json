@@ -101,7 +101,7 @@
     "ci-info": "^4.2.0",
     "git-url-parse": "^16.1.0",
     "simple-git": "^3.27.0",
-    "unplugin": "^2.3.4"
+    "unplugin": "^2.3.5"
   },
   "devDependencies": {
     "@nuxt/kit": "^3.17.4",
