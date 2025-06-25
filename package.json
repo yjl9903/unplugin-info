@@ -114,7 +114,7 @@
     "chalk": "^5.4.1",
     "date-fns": "^4.1.0",
     "fast-glob": "^3.3.3",
-    "prettier": "^3.6.0",
+    "prettier": "^3.6.1",
     "rollup": "^4.44.0",
     "tsx": "^4.20.3",
     "typescript": "^5.8.3",
