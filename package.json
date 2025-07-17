@@ -115,7 +115,7 @@
     "date-fns": "^4.1.0",
     "fast-glob": "^3.3.3",
     "prettier": "^3.6.2",
-    "rollup": "^4.44.2",
+    "rollup": "^4.45.1",
     "tsx": "^4.20.3",
     "typescript": "^5.8.3",
     "unbuild": "^3.5.0",
