@@ -124,8 +124,8 @@
     "webpack": "^5.100.2"
   },
   "peerDependencies": {
-    "@nuxt/kit": "^3",
-    "@nuxt/schema": "^3",
+    "@nuxt/kit": ">=3",
+    "@nuxt/schema": ">=3",
     "esbuild": "*",
     "rollup": "^2 || ^3 || ^4",
     "vite": ">=3.2.7",
