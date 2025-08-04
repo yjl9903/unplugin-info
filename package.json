@@ -111,7 +111,7 @@
     "@types/parse-github-url": "^1.0.3",
     "@types/remote-origin-url": "^2.0.4",
     "bumpp": "^10.2.2",
-    "chalk": "^5.4.1",
+    "chalk": "^5.5.0",
     "date-fns": "^4.1.0",
     "fast-glob": "^3.3.3",
     "prettier": "^3.6.2",
