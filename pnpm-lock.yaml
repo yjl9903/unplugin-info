@@ -21,8 +21,8 @@ importers:
         specifier: ^3.28.0
         version: 3.28.0
       unplugin:
-        specifier: ^2.3.5
-        version: 2.3.5
+        specifier: ^2.3.6
+        version: 2.3.6
     devDependencies:
       '@nuxt/kit':
         specifier: ^4.0.3
@@ -909,6 +909,9 @@ packages:
 
   '@jridgewell/gen-mapping@0.3.12':
     resolution: {integrity: sha512-OuLGC46TjB5BbN1dH8JULVVZY4WTdkF7tV9Ys6wLL1rubZnCMstOhNHueU5bLCrnRuDhKPDM4g6sw4Bel5Gzqg==}
+
+  '@jridgewell/remapping@2.3.5':
+    resolution: {integrity: sha512-LI9u/+laYG4Ds1TDKSJW2YPrIlcVYOwi2fUC6xB43lueCjgxV4lffOCZCtYFiH6TNOX+tQKXx97T4IKHbhyHEQ==}
 
   '@jridgewell/resolve-uri@3.1.2':
     resolution: {integrity: sha512-bRISgCIjP20/tbWSPWMEi54QVPRZExkuD9lJL+UIxUKtwVJA8wW1Trb1jMs1RFXo1CBTNZ/5hpC9QvmKWdopKw==}
@@ -4978,6 +4981,10 @@ packages:
     resolution: {integrity: sha512-RyWSb5AHmGtjjNQ6gIlA67sHOsWpsbWpwDokLwTcejVdOjEkJZh7QKu14J00gDDVSh8kGH4KYC/TNBceXFZhtw==}
     engines: {node: '>=18.12.0'}
 
+  unplugin@2.3.6:
+    resolution: {integrity: sha512-+/MdXl8bLTXI2lJF22gUBeCFqZruEpL/oM9f8wxCuKh9+Mw9qeul3gTqgbKpMeOFlusCzc0s7x2Kax2xKW+FQg==}
+    engines: {node: '>=18.12.0'}
+
   unstorage@1.16.1:
     resolution: {integrity: sha512-gdpZ3guLDhz+zWIlYP1UwQ259tG5T5vYRzDaHMkQ1bBY1SQPutvZnrRjTFaWUUpseErJIgAZS51h6NOcZVZiqQ==}
     peerDependencies:
@@ -6006,6 +6013,11 @@ snapshots:
   '@jridgewell/gen-mapping@0.3.12':
     dependencies:
       '@jridgewell/sourcemap-codec': 1.5.4
+      '@jridgewell/trace-mapping': 0.3.29
+
+  '@jridgewell/remapping@2.3.5':
+    dependencies:
+      '@jridgewell/gen-mapping': 0.3.12
       '@jridgewell/trace-mapping': 0.3.29
 
   '@jridgewell/resolve-uri@3.1.2': {}
@@ -8674,7 +8686,7 @@ snapshots:
       exsolve: 1.0.7
       mocked-exports: 0.1.1
       pathe: 2.0.3
-      unplugin: 2.3.5
+      unplugin: 2.3.6
       unplugin-utils: 0.2.5
 
   imurmurhash@0.1.4: {}
@@ -8948,7 +8960,7 @@ snapshots:
       regexp-tree: 0.1.27
       type-level-regexp: 0.1.17
       ufo: 1.6.1
-      unplugin: 2.3.5
+      unplugin: 2.3.6
 
   magic-string-ast@1.0.0:
     dependencies:
@@ -10577,7 +10589,7 @@ snapshots:
       acorn: 8.15.0
       estree-walker: 3.0.3
       magic-string: 0.30.17
-      unplugin: 2.3.5
+      unplugin: 2.3.6
 
   undici-types@6.21.0: {}
 
@@ -10611,7 +10623,7 @@ snapshots:
       scule: 1.3.0
       strip-literal: 3.0.0
       tinyglobby: 0.2.14
-      unplugin: 2.3.5
+      unplugin: 2.3.6
       unplugin-utils: 0.2.5
 
   unixify@1.0.0:
@@ -10641,7 +10653,7 @@ snapshots:
       picomatch: 4.0.3
       scule: 1.3.0
       tinyglobby: 0.2.14
-      unplugin: 2.3.5
+      unplugin: 2.3.6
       unplugin-utils: 0.2.5
       yaml: 2.8.1
     optionalDependencies:
@@ -10657,6 +10669,13 @@ snapshots:
 
   unplugin@2.3.5:
     dependencies:
+      acorn: 8.15.0
+      picomatch: 4.0.3
+      webpack-virtual-modules: 0.6.2
+
+  unplugin@2.3.6:
+    dependencies:
+      '@jridgewell/remapping': 2.3.5
       acorn: 8.15.0
       picomatch: 4.0.3
       webpack-virtual-modules: 0.6.2
