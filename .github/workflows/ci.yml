@@ -51,7 +51,7 @@ jobs:
 
       - name: Upload pages artifacts
         # https://github.com/actions/upload-pages-artifact
-        uses: actions/upload-pages-artifact@v3
+        uses: actions/upload-pages-artifact@v4
         with:
           path: 'examples/vite/dist'
 
