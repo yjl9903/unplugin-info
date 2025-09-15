@@ -21,7 +21,7 @@ importers:
         specifier: ^3.28.0
         version: 3.28.0
       unplugin:
-        specifier: ^2.3.5
+        specifier: ^2.3.10
         version: 2.3.10
     devDependencies:
       '@nuxt/kit':
