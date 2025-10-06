@@ -33,6 +33,7 @@ export class BuildGitModule extends BuildInfoModule {
         'tag',
         'tags',
         'lastTag',
+        'describe',
         'author',
         'authorEmail',
         'authorDate',

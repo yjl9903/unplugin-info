@@ -11,10 +11,11 @@ export async function getRepoInfo(root: string, extra: Options['git'] = {}) {
     return undefined;
   }
 
-  const [branch, currentCommit, committer, tags, github, result] = await Promise.all([
+  const [branch, currentCommit, committer, describe, tags, github, result] = await Promise.all([
     getBranch(git),
     getCommit(git),
     getCommitter(git),
+    getDescribe(git),
     getTags(git),
     getGitHubUrl(git),
     Promise.all(
@@ -28,6 +29,7 @@ export async function getRepoInfo(root: string, extra: Options['git'] = {}) {
     ...branch,
     ...currentCommit,
     ...committer,
+    ...describe,
     ...tags,
     ...github,
     ...Object.fromEntries(result)
@@ -104,6 +106,19 @@ async function getTags(git: SimpleGit) {
     return { tag: tags.all[tags.all.length - 1], tags: tags.all, lastTag: all.latest };
   } catch (error) {
     return { tags: undefined, lastTag: undefined };
+  }
+}
+
+export async function getDescribe(git: SimpleGit) {
+  try {
+    const output = await git.raw(['describe', '--always']);
+    return {
+      describe: removeLineBreak(output)
+    };
+  } catch (error) {
+    return {
+      describe: undefined
+    };
   }
 }
 

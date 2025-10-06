@@ -21,6 +21,12 @@ describe('build info', () => {
     expect(github).toMatchInlineSnapshot('"https://github.com/yjl9903/unplugin-info"');
   });
 
+  it('should expose git describe output', async () => {
+    const info = await import('~build/git');
+    expect(typeof info.describe).toBe('string');
+    expect(info.describe?.length).toBeGreaterThan(0);
+  });
+
   it('should infer CI', async () => {
     const ci = await import('ci-info');
     const { isCI, isPR, name } = await import('~build/ci');

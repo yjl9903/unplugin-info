@@ -26,6 +26,9 @@ declare module '~build/git' {
   /** Tag for the closest tagged ancestor (or `null` if no ancestor is tagged) */
   export const lastTag: string | null;
 
+  /** Output of `git describe --always` for the current commit */
+  export const describe: string;
+
   /** The committer of the current SHA */
   export const committer: string;
 
