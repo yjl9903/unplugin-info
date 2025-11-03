@@ -18,7 +18,7 @@ importers:
         specifier: ^16.1.0
         version: 16.1.0
       simple-git:
-        specifier: ^3.29.0
+        specifier: ^3.30.0
         version: 3.30.0
       unplugin:
         specifier: ^2.3.10
