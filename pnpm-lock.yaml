@@ -76,7 +76,7 @@ importers:
         specifier: ^4.0.13
         version: 4.0.13(@types/node@24.10.1)(jiti@2.6.1)(terser@5.44.1)(tsx@4.20.6)(yaml@2.8.1)
       webpack:
-        specifier: ^5.102.1
+        specifier: ^5.103.0
         version: 5.103.0(esbuild@0.27.0)
 
   examples/nuxt:
