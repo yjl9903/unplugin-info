@@ -8,7 +8,8 @@ export default defineBuildConfig({
     'src/webpack',
     'src/rollup',
     'src/esbuild',
-    'src/nuxt'
+    'src/nuxt',
+    'src/rspack'
   ],
   declaration: true,
   rollup: {

@@ -10,6 +10,7 @@
     "vite",
     "vite-plugin",
     "webpack",
+    "rspack",
     "git",
     "CI"
   ],
@@ -64,6 +65,11 @@
     },
     "./client": {
       "types": "./client.d.ts"
+    },
+    "./rspack": {
+      "types": "./dist/rspack.d.ts",
+      "import": "./dist/rspack.mjs",
+      "require": "./dist/rspack.cjs"
     }
   },
   "main": "dist/index.cjs",
@@ -86,10 +92,12 @@
     "build:nuxt": "pnpm -C examples/nuxt build",
     "build:vite": "pnpm -C examples/vite build",
     "build:webpack": "pnpm -C examples/webpack build",
+    "build:rspack": "pnpm -C examples/rspack build",
     "dev": "unbuild --stub",
     "dev:nuxt": "pnpm -C examples/nuxt dev",
     "dev:vite": "pnpm -C examples/vite dev",
     "dev:webpack": "pnpm -C examples/webpack dev",
+    "dev:rspack": "pnpm -C examples/rspack dev",
     "format": "prettier --write examples src",
     "release": "bumpp package.json examples/*/package.json --commit --push --tag && pnpm publish",
     "test": "vitest",
@@ -129,7 +137,8 @@
     "esbuild": "*",
     "rollup": "^2 || ^3 || ^4",
     "vite": ">=3.2.7",
-    "webpack": "^4 || ^5"
+    "webpack": "^4 || ^5",
+    "@rspack/core": "*"
   },
   "peerDependenciesMeta": {
     "@nuxt/kit": {
@@ -148,6 +157,9 @@
       "optional": true
     },
     "webpack": {
+      "optional": true
+    },
+    "@rspack/core": {
       "optional": true
     }
   },

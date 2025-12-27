@@ -21,7 +21,7 @@ export class BuildEnvModule extends BuildInfoModule {
     const meta = await get();
     const body = Object.entries(meta).map(([key, value]) =>
       !cloudflare
-        ? `export const ${key} = (import.meta.env.SSR ? process?.env?.['${key.replace(/'/g, '\\')}'] : undefined) ?? ${JSON.stringify(value, null, 2)};`
+        ? `export const ${key} = (typeof import.meta?.env?.SSR !== 'undefined' && import.meta.env.SSR ? process?.env?.['${key.replace(/'/g, '\\\\')}'] : undefined) ?? ${JSON.stringify(value, null, 2)};`
         : `export const ${key} = ${JSON.stringify(value, null, 2)};`
     );
 
