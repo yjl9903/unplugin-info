@@ -1,5 +1,6 @@
-const { UnpluginInfo } = require('../../dist/index.cjs');
 const path = require('path');
+
+const { UnpluginInfo } = require('../../dist/index.cjs');
 
 module.exports = {
   mode: 'development',

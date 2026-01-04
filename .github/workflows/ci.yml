@@ -44,7 +44,9 @@ jobs:
         run: |
           pnpm build
           pnpm build:vite
+          pnpm build:nuxt
           pnpm build:webpack
+          pnpm build:rspack
 
       - name: Test
         run: pnpm test

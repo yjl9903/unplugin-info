@@ -1,11 +1,11 @@
 {
   "name": "unplugin-info-rspack-example",
+  "version": "1.2.4",
   "private": true,
-  "version": "0.0.0",
   "type": "commonjs",
   "scripts": {
-    "dev": "rspack serve",
-    "build": "rspack build"
+    "build": "rspack build",
+    "dev": "rspack serve"
   },
   "dependencies": {
     "unplugin-info": "workspace:*"
