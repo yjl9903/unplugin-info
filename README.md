@@ -59,6 +59,24 @@ export default {
 <br></details>
 
 <details>
+<summary>Rspack</summary><br>
+
+```ts
+// rspack.config.js
+
+module.exports = {
+  /* ... */
+  plugins: [
+    require('unplugin-info/rspack')()
+  ]
+};
+```
+
+Full example is located at [examples/rspack](https://github.com/yjl9903/unplugin-info/blob/main/examples/rspack).
+
+<br></details>
+
+<details>
 <summary>Webpack</summary><br>
 
 ```ts
