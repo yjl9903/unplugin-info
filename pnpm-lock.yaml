@@ -79,7 +79,7 @@ importers:
         specifier: ^4.0.18
         version: 4.0.18(@types/node@24.10.12)(jiti@2.6.1)(terser@5.46.0)(tsx@4.21.0)(yaml@2.8.2)
       webpack:
-        specifier: ^5.104.1
+        specifier: ^5.105.0
         version: 5.105.0(esbuild@0.27.3)
 
   examples/nuxt:
