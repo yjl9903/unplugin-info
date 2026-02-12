@@ -79,8 +79,8 @@ importers:
         specifier: ^4.0.18
         version: 4.0.18(@types/node@24.10.13)(jiti@2.6.1)(terser@5.46.0)(tsx@4.21.0)(yaml@2.8.2)
       webpack:
-        specifier: ^5.105.1
-        version: 5.105.1(esbuild@0.27.3)
+        specifier: ^5.105.2
+        version: 5.105.2(esbuild@0.27.3)
 
   examples/nuxt:
     devDependencies:
@@ -99,7 +99,7 @@ importers:
     devDependencies:
       '@rspack/cli':
         specifier: ^1.0.0
-        version: 1.7.5(@rspack/core@1.7.5)(@types/express@4.17.25)(tslib@2.8.1)(webpack@5.105.1(esbuild@0.27.3))
+        version: 1.7.5(@rspack/core@1.7.5)(@types/express@4.17.25)(tslib@2.8.1)(webpack@5.105.2(esbuild@0.27.3))
       '@rspack/core':
         specifier: ^1.0.0
         version: 1.7.5
@@ -5256,8 +5256,8 @@ packages:
       webpack-cli:
         optional: true
 
-  webpack@5.105.1:
-    resolution: {integrity: sha512-Gdj3X74CLJJ8zy4URmK42W7wTZUJrqL+z8nyGEr4dTN0kb3nVs+ZvjbTOqRYPD7qX4tUmwyHL9Q9K6T1seW6Yw==}
+  webpack@5.105.2:
+    resolution: {integrity: sha512-dRXm0a2qcHPUBEzVk8uph0xWSjV/xZxenQQbLwnwP7caQCYpqG1qddwlyEkIDkYn0K8tvmcrZ+bOrzoQ3HxCDw==}
     engines: {node: '>=10.13.0'}
     hasBin: true
     peerDependencies:
@@ -6848,11 +6848,11 @@ snapshots:
       '@rspack/binding-win32-ia32-msvc': 1.7.5
       '@rspack/binding-win32-x64-msvc': 1.7.5
 
-  '@rspack/cli@1.7.5(@rspack/core@1.7.5)(@types/express@4.17.25)(tslib@2.8.1)(webpack@5.105.1(esbuild@0.27.3))':
+  '@rspack/cli@1.7.5(@rspack/core@1.7.5)(@types/express@4.17.25)(tslib@2.8.1)(webpack@5.105.2(esbuild@0.27.3))':
     dependencies:
       '@discoveryjs/json-ext': 0.5.7
       '@rspack/core': 1.7.5
-      '@rspack/dev-server': 1.1.5(@rspack/core@1.7.5)(@types/express@4.17.25)(tslib@2.8.1)(webpack@5.105.1(esbuild@0.27.3))
+      '@rspack/dev-server': 1.1.5(@rspack/core@1.7.5)(@types/express@4.17.25)(tslib@2.8.1)(webpack@5.105.2(esbuild@0.27.3))
       exit-hook: 4.0.0
       webpack-bundle-analyzer: 4.10.2
     transitivePeerDependencies:
@@ -6871,13 +6871,13 @@ snapshots:
       '@rspack/binding': 1.7.5
       '@rspack/lite-tapable': 1.1.0
 
-  '@rspack/dev-server@1.1.5(@rspack/core@1.7.5)(@types/express@4.17.25)(tslib@2.8.1)(webpack@5.105.1(esbuild@0.27.3))':
+  '@rspack/dev-server@1.1.5(@rspack/core@1.7.5)(@types/express@4.17.25)(tslib@2.8.1)(webpack@5.105.2(esbuild@0.27.3))':
     dependencies:
       '@rspack/core': 1.7.5
       chokidar: 3.6.0
       http-proxy-middleware: 2.0.9(@types/express@4.17.25)
       p-retry: 6.2.1
-      webpack-dev-server: 5.2.2(tslib@2.8.1)(webpack@5.105.1(esbuild@0.27.3))
+      webpack-dev-server: 5.2.2(tslib@2.8.1)(webpack@5.105.2(esbuild@0.27.3))
       ws: 8.19.0
     transitivePeerDependencies:
       - '@types/express'
@@ -10161,14 +10161,14 @@ snapshots:
     optionalDependencies:
       esbuild: 0.27.3
 
-  terser-webpack-plugin@5.3.16(esbuild@0.27.3)(webpack@5.105.1(esbuild@0.27.3)):
+  terser-webpack-plugin@5.3.16(esbuild@0.27.3)(webpack@5.105.2(esbuild@0.27.3)):
     dependencies:
       '@jridgewell/trace-mapping': 0.3.31
       jest-worker: 27.5.1
       schema-utils: 4.3.3
       serialize-javascript: 6.0.2
       terser: 5.46.0
-      webpack: 5.105.1(esbuild@0.27.3)
+      webpack: 5.105.2(esbuild@0.27.3)
     optionalDependencies:
       esbuild: 0.27.3
 
@@ -10667,7 +10667,7 @@ snapshots:
       schema-utils: 4.3.3
       webpack: 5.105.0(esbuild@0.27.3)(webpack-cli@5.1.4)
 
-  webpack-dev-middleware@7.4.5(tslib@2.8.1)(webpack@5.105.1(esbuild@0.27.3)):
+  webpack-dev-middleware@7.4.5(tslib@2.8.1)(webpack@5.105.2(esbuild@0.27.3)):
     dependencies:
       colorette: 2.0.20
       memfs: 4.56.10(tslib@2.8.1)
@@ -10676,7 +10676,7 @@ snapshots:
       range-parser: 1.2.1
       schema-utils: 4.3.3
     optionalDependencies:
-      webpack: 5.105.1(esbuild@0.27.3)
+      webpack: 5.105.2(esbuild@0.27.3)
     transitivePeerDependencies:
       - tslib
 
@@ -10721,7 +10721,7 @@ snapshots:
       - supports-color
       - utf-8-validate
 
-  webpack-dev-server@5.2.2(tslib@2.8.1)(webpack@5.105.1(esbuild@0.27.3)):
+  webpack-dev-server@5.2.2(tslib@2.8.1)(webpack@5.105.2(esbuild@0.27.3)):
     dependencies:
       '@types/bonjour': 3.5.13
       '@types/connect-history-api-fallback': 1.5.4
@@ -10749,10 +10749,10 @@ snapshots:
       serve-index: 1.9.2
       sockjs: 0.3.24
       spdy: 4.0.2
-      webpack-dev-middleware: 7.4.5(tslib@2.8.1)(webpack@5.105.1(esbuild@0.27.3))
+      webpack-dev-middleware: 7.4.5(tslib@2.8.1)(webpack@5.105.2(esbuild@0.27.3))
       ws: 8.19.0
     optionalDependencies:
-      webpack: 5.105.1(esbuild@0.27.3)
+      webpack: 5.105.2(esbuild@0.27.3)
     transitivePeerDependencies:
       - bufferutil
       - debug
@@ -10804,7 +10804,7 @@ snapshots:
       - esbuild
       - uglify-js
 
-  webpack@5.105.1(esbuild@0.27.3):
+  webpack@5.105.2(esbuild@0.27.3):
     dependencies:
       '@types/eslint-scope': 3.7.7
       '@types/estree': 1.0.8
@@ -10828,7 +10828,7 @@ snapshots:
       neo-async: 2.6.2
       schema-utils: 4.3.3
       tapable: 2.3.0
-      terser-webpack-plugin: 5.3.16(esbuild@0.27.3)(webpack@5.105.1(esbuild@0.27.3))
+      terser-webpack-plugin: 5.3.16(esbuild@0.27.3)(webpack@5.105.2(esbuild@0.27.3))
       watchpack: 2.5.1
       webpack-sources: 3.3.3
     transitivePeerDependencies:
