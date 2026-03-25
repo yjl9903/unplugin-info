@@ -60,4 +60,4 @@ jobs:
       - name: Deploy to GitHub Pages
         if: github.ref == 'refs/heads/main'
         # https://github.com/actions/deploy-pages
-        uses: actions/deploy-pages@v4
+        uses: actions/deploy-pages@v5
