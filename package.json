@@ -99,7 +99,7 @@
     "dev:webpack": "pnpm -C examples/webpack dev",
     "dev:rspack": "pnpm -C examples/rspack dev",
     "format": "prettier --write examples src",
-    "release": "bumpp package.json examples/*/package.json --commit --push --tag && pnpm publish",
+    "release": "bumpp package.json examples/*/package.json --commit --push --tag",
     "test": "vitest",
     "test:ci": "vitest --run",
     "typecheck": "tsc --noEmit",
