@@ -123,7 +123,7 @@
     "date-fns": "^4.1.0",
     "fast-glob": "^3.3.3",
     "prettier": "^3.8.1",
-    "rollup": "^4.60.0",
+    "rollup": "^4.60.1",
     "tsx": "^4.21.0",
     "typescript": "^6.0.2",
     "unbuild": "^3.6.1",
