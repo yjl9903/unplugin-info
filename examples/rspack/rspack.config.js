@@ -7,10 +7,10 @@ module.exports = {
   entry: './src/index.ts',
   output: {
     filename: 'bundle.js',
-    path: path.resolve(__dirname, 'dist'),
+    path: path.resolve(__dirname, 'dist')
   },
   resolve: {
-    extensions: ['.ts', '.js'],
+    extensions: ['.ts', '.js']
   },
   module: {
     rules: [
@@ -21,32 +21,32 @@ module.exports = {
           options: {
             jsc: {
               parser: {
-                syntax: 'typescript',
-              },
-            },
-          },
-        },
-      },
-    ],
+                syntax: 'typescript'
+              }
+            }
+          }
+        }
+      }
+    ]
   },
   plugins: [
     new (require('@rspack/core').DefinePlugin)({
       'import.meta.env': JSON.stringify({
         NODE_ENV: 'development',
-        SSR: false,
+        SSR: false
       }),
       'process.env': JSON.stringify({
-        NODE_ENV: 'development',
-      }),
+        NODE_ENV: 'development'
+      })
     }),
     UnpluginInfo.rspack({
       // Options here
-    }),
+    })
   ],
   devServer: {
     port: 8081,
     static: {
-      directory: path.join(__dirname, 'public'),
-    },
-  },
+      directory: path.join(__dirname, 'public')
+    }
+  }
 };
