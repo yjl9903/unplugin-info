@@ -109,7 +109,7 @@
   "dependencies": {
     "ci-info": "^4.4.0",
     "git-url-parse": "^16.1.0",
-    "simple-git": "^3.35.2",
+    "simple-git": "^3.36.0",
     "unplugin": "^3.0.0"
   },
   "devDependencies": {
