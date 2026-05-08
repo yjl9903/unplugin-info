@@ -115,7 +115,7 @@
   "devDependencies": {
     "@nuxt/kit": "^4.4.4",
     "@nuxt/schema": "^4.4.4",
-    "@types/node": "^24.12.2",
+    "@types/node": "^24.12.3",
     "bumpp": "^11.1.0",
     "chalk": "^5.6.2",
     "date-fns": "^4.1.0",
