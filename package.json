@@ -126,7 +126,7 @@
     "typescript": "^7.0.2",
     "vite": "^8.1.5",
     "vitest": "^4.1.10",
-    "webpack": "^5.108.4"
+    "webpack": "^5.109.0"
   },
   "peerDependencies": {
     "@nuxt/kit": ">=3",
