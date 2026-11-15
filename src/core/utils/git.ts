@@ -102,10 +102,19 @@ async function getTags(git: SimpleGit) {
   try {
     const hash = await git.revparse(['HEAD']);
     const tags = await git.tags(['--points-at', hash]);
-    const all = await git.tags();
-    return { tag: tags.all[tags.all.length - 1], tags: tags.all, lastTag: all.latest };
+    const lastTag = await getLastTag(git, hash);
+    return { tag: tags.all[tags.all.length - 1] ?? null, tags: tags.all, lastTag };
   } catch (error) {
-    return { tags: undefined, lastTag: undefined };
+    return { tag: null, tags: null, lastTag: null };
+  }
+}
+
+async function getLastTag(git: SimpleGit, hash: string) {
+  try {
+    const output = await git.raw(['describe', '--tags', '--abbrev=0', hash]);
+    return removeLineBreak(output);
+  } catch (error) {
+    return null;
   }
 }
 
